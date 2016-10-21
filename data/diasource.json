@@ -1,0 +1,27 @@
+{
+	"diaSourceId":111111,
+	"ccdVisitId":111111,
+	"midPointTai":12314.142412,
+	"filterName":"my favorite filter",
+	"radec": {
+		"ra": 124142.12414,
+		"decl": 1214141.121
+		},
+	"radecCov": {
+		"raSigma": 12311.1421,
+		"declSigma": 12311.131,
+		"ra_decl_Cov": 1231.31231
+		},
+	"xy": {
+		"x": 112.1,
+		"y": 121.1
+		},
+	"xyCov": {
+		"xSigma": 1.2,
+		"ySigma": 12.1,
+		"x_y_Cov": 11.2
+		},
+	"snr": 41.1,
+	"psFlux": 1241.0,
+	"flags": 0
+}
