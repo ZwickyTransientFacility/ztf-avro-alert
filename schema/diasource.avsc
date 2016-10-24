@@ -74,7 +74,7 @@
 					]},
 			"null"]},
 		{"name": "psFluxSigma", "type": ["float", "null"]},
-		{"name": "psLnl", "type": ["float", "null"]},
+		{"name": "psLnL", "type": ["float", "null"]},
 		{"name": "psChi2", "type": ["float", "null"]},
 		{"name": "psN", "type": ["int", "null"]},
 		{"name": "trailFlux", "type": ["float", "null"]},
@@ -137,7 +137,7 @@
 				{"name": "dipCov15", "type": "float"}
 					]},
 			"null"]},
-		{"name": "dipLnl", "type": ["float", "null"]},
+		{"name": "dipLnL", "type": ["float", "null"]},
 		{"name": "dipChi2", "type": ["float", "null"]},
 		{"name": "dipN", "type": ["int", "null"]},
 		{"name": "fpFlux", "aliases": ["totFlux"], "type": ["float", "null"]},
