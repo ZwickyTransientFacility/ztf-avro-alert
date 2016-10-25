@@ -12,8 +12,8 @@
 				"dec": 1214141.121
 				},
 			"radecCov": {
-			"raSigma": 12311.1421,
-			"decSigma": 12311.131,
+			"raVar": 12311.1421,
+			"decVar": 12311.131,
 			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
@@ -21,8 +21,8 @@
 				"y": 121.1
 				},
 			"xyCov": {
-				"xSigma": 1.2,
-				"ySigma": 12.1,
+				"xVar": 1.2,
+				"yVar": 12.1,
 				"x_y_Cov": 11.2
 				},
 			"snr": 41.1,
@@ -40,8 +40,8 @@
 				"dec": 1214141.121
 				},
 			"radecCov": {
-			"raSigma": 12311.1421,
-			"decSigma": 12311.131,
+			"raVar": 12311.1421,
+			"decVar": 12311.131,
 			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
@@ -49,8 +49,8 @@
 				"y": 121.1
 				},
 			"xyCov": {
-				"xSigma": 1.2,
-				"ySigma": 12.1,
+				"xVar": 1.2,
+				"yVar": 12.1,
 				"x_y_Cov": 11.2
 				},
 			"snr": 41.1,
@@ -67,8 +67,8 @@
 				"dec": 1214141.121
 				},
 			"radecCov": {
-			"raSigma": 12311.1421,
-			"decSigma": 12311.131,
+			"raVar": 12311.1421,
+			"decVar": 12311.131,
 			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
@@ -76,8 +76,8 @@
 				"y": 121.1
 				},
 			"xyCov": {
-				"xSigma": 1.2,
-				"ySigma": 12.1,
+				"xVar": 1.2,
+				"yVar": 12.1,
 				"x_y_Cov": 11.2
 				},
 			"snr": 41.1,
@@ -92,8 +92,8 @@
 				"dec": 6544436.121
 				},
 			"radecCov": {
-				"raSigma": 432.1421,
-				"decSigma": 243.131,
+				"raVar": 432.1421,
+				"decVar": 243.131,
 				"ra_dec_Cov": 243.31231
 				},
 			"radecTai": 134904.12414,
@@ -103,12 +103,12 @@
 				},
 			"parallax":2.124124,
 			"muParallaxCov": {
-				"muParallaxCov01": 432.1421,
-				"muParallaxCov02": 432.1421,
-				"muParallaxCov03": 432.1421,
-				"muParallaxCov04": 432.1421,
-				"muParallaxCov05": 432.1421,
-				"muParallaxCov06": 432.1421
+				"muRaVar": 432.1421,
+				"muDecVar": 432.1421,
+				"parallaxVar": 432.1421,
+				"muRa_muDec_Cov": 432.1421,
+				"muRa_parallax_Cov": 432.1421,
+				"muDec_parallax_Cov": 432.1421
 				},
 			"muParallaxLnL": 1343141.0341,
 			"muParallaxChi2": 1341421.2414,
@@ -151,8 +151,8 @@
 			"dec": 6544436.121
 			},
 		"radecCov": {
-			"raSigma": 432.1421,
-			"decSigma": 243.131,
+			"raVar": 432.1421,
+			"decVar": 243.131,
 			"ra_dec_Cov": 243.31231
 			},
 		"radecTai": 134904.12414,
@@ -162,12 +162,12 @@
 			},
 		"parallax":2.124124,
 		"muParallaxCov": {
-			"muParallaxCov01": 432.1421,
-			"muParallaxCov02": 432.1421,
-			"muParallaxCov03": 432.1421,
-			"muParallaxCov04": 432.1421,
-			"muParallaxCov05": 432.1421,
-			"muParallaxCov06": 432.1421
+			"muRaVar": 432.1421,
+			"muDecVar": 432.1421,
+			"parallaxVar": 432.1421,
+			"muRa_muDec_Cov": 432.1421,
+			"muRa_parallax_Cov": 432.1421,
+			"muDec_parallax_Cov": 432.1421
 			},
 		"muParallaxLnL": 1343141.0341,
 		"muParallaxChi2": 1341421.2414,
@@ -185,8 +185,8 @@
 				"dec": 1214141.121
 				},
 			"radecCov": {
-			"raSigma": 12311.1421,
-			"decSigma": 12311.131,
+			"raVar": 12311.1421,
+			"decVar": 12311.131,
 			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
@@ -194,8 +194,8 @@
 				"y": 121.1
 				},
 			"xyCov": {
-				"xSigma": 1.2,
-				"ySigma": 12.1,
+				"xVar": 1.2,
+				"yVar": 12.1,
 				"x_y_Cov": 11.2
 				},
 			"snr": 41.1,
@@ -212,8 +212,8 @@
 				"dec": 1214141.121
 				},
 			"radecCov": {
-			"raSigma": 12311.1421,
-			"decSigma": 12311.131,
+			"raVar": 12311.1421,
+			"decVar": 12311.131,
 			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
@@ -221,8 +221,8 @@
 				"y": 121.1
 				},
 			"xyCov": {
-				"xSigma": 1.2,
-				"ySigma": 12.1,
+				"xVar": 1.2,
+				"yVar": 12.1,
 				"x_y_Cov": 11.2
 				},
 			"snr": 41.1,

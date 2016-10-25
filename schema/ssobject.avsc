@@ -16,6 +16,13 @@
 				]}, "null"]},
 		{"name": "oeCov", "type": [{"type": "record",
 			"name": "oeCov", "fields": [
+				{"name": "qVar", "type": ["double", "null"]},
+				{"name": "eVar", "type": ["double", "null"]},
+				{"name": "iVar", "type": ["double", "null"]},
+				{"name": "lanVar", "type": ["double", "null"]},
+				{"name": "aopVar", "type": ["double", "null"]},
+				{"name": "MVar", "type": ["double", "null"]},
+				{"name": "epochVar", "type": ["double", "null"]},
 				{"name": "q_e_Cov", "type": ["double", "null"]},
 				{"name": "q_i_Cov", "type": ["double", "null"]},
 				{"name": "q_lan_Cov", "type": ["double", "null"]},

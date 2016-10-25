@@ -7,13 +7,13 @@
 		"ra": 124142.12414,
 		"dec": 1214141.121
 		},
-	"raSigma": 5.1,
-	"decSigma": 10.1,
+	"raVar": 5.1,
+	"decVar": 10.1,
 	"ra_dec_Cov": 1.241,
 	"x": 112.1,
 	"y": 121.1,
-	"xSigma": 1.2,
-	"ySigma": 12.1,
+	"xVar": 1.2,
+	"yVar": 12.1,
 	"x_y_Cov": 11.2,
 	"snr": 41.1,
 	"psFlux": 1241.0

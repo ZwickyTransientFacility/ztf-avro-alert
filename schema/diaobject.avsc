@@ -11,8 +11,8 @@
 				]}]},
 		{"name": "radecCov", "type": [{"type": "record",
 			"name": "radecCov", "fields": [
-				{"name": "raSigma", "type": "float"},
-				{"name": "decSigma", "type": "float"},
+				{"name": "raVar", "type": "float"},
+				{"name": "decVar", "type": "float"},
 				{"name": "ra_dec_Cov", "type": "float"}
 				]}]},
 		{"name": "radecTai", "type": "double"},
@@ -24,12 +24,12 @@
 		{"name": "parallax", "type": "float"},
 		{"name": "muParallaxCov", "type": [{"type": "record",
 			"name": "muParallaxCov", "fields": [
-				{"name": "muParallaxCov01", "type": "float"},
-				{"name": "muParallaxCov02", "type": "float"},
-				{"name": "muParallaxCov03", "type": "float"},
-				{"name": "muParallaxCov04", "type": "float"},
-				{"name": "muParallaxCov05", "type": "float"},
-				{"name": "muParallaxCov06", "type": "float"}
+				{"name": "muRaVar", "type": "float"},
+				{"name": "muDecVar", "type": "float"},
+				{"name": "parallaxVar", "type": "float"},
+				{"name": "muRa_muDec_Cov", "type": "float"},
+				{"name": "muRa_parallax_Cov", "type": "float"},
+				{"name": "muDec_parallax_Cov", "type": "float"}
 					]}]},
 		{"name": "muParallaxLnL", "type": "float"},
 		{"name": "muParallaxChi2", "type": "float"},
