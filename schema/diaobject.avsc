@@ -7,19 +7,19 @@
 		{"name": "radec", "type": [{"type": "record",
 			"name": "radec", "fields": [
 				{"name": "ra", "type": "double"},
-				{"name": "decl", "type": "double"}
+				{"name": "dec", "type": "double"}
 				]}]},
 		{"name": "radecCov", "type": [{"type": "record",
 			"name": "radecCov", "fields": [
 				{"name": "raSigma", "type": "float"},
-				{"name": "declSigma", "type": "float"},
-				{"name": "ra_decl_Cov", "type": "float"}
+				{"name": "decSigma", "type": "float"},
+				{"name": "ra_dec_Cov", "type": "float"}
 				]}]},
 		{"name": "radecTai", "type": "double"},
 		{"name": "mu", "type": [{"type": "record",
 			"name": "mu", "fields": [
 				{"name": "muRa", "type": "float"},
-				{"name": "muDecl", "type": "float"}
+				{"name": "muDec", "type": "float"}
 				]}]},
 		{"name": "parallax", "type": "float"},
 		{"name": "muParallaxCov", "type": [{"type": "record",

@@ -13,13 +13,13 @@
 		{"name": "radec", "type": [{"type": "record",
 			"name": "radec", "fields": [
 				{"name": "ra", "type": "double"},
-				{"name": "decl", "type": "double"}
+				{"name": "dec", "type": "double"}
 				]}]},
 		{"name": "radecCov", "type": [{"type": "record",
 			"name": "radecCov", "fields": [
 				{"name": "raSigma", "type": "float"},
-				{"name": "declSigma", "type": "float"},
-				{"name": "ra_decl_Cov", "type": "float"}
+				{"name": "decSigma", "type": "float"},
+				{"name": "ra_dec_Cov", "type": "float"}
 				]}]},
 		{"name": "xy", "type": [{"type": "record",
 			"name": "xy", "fields": [

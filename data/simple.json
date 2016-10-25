@@ -5,11 +5,11 @@
 	"filterName":"my favorite filter",
 	"radec": {
 		"ra": 124142.12414,
-		"decl": 1214141.121
+		"dec": 1214141.121
 		},
 	"raSigma": 5.1,
-	"declSigma": 10.1,
-	"ra_decl_Cov": 1.241,
+	"decSigma": 10.1,
+	"ra_dec_Cov": 1.241,
 	"x": 112.1,
 	"y": 121.1,
 	"xSigma": 1.2,

@@ -9,12 +9,12 @@
 			"filterName":"my favorite filter",
 			"radec": {
 				"ra": 124142.12414,
-				"decl": 1214141.121
+				"dec": 1214141.121
 				},
 			"radecCov": {
 			"raSigma": 12311.1421,
-			"declSigma": 12311.131,
-			"ra_decl_Cov": 1231.31231
+			"decSigma": 12311.131,
+			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
 				"x": 112.1,
@@ -37,12 +37,12 @@
 			"filterName":"my favorite filter",
 			"radec": {
 				"ra": 124142.12414,
-				"decl": 1214141.121
+				"dec": 1214141.121
 				},
 			"radecCov": {
 			"raSigma": 12311.1421,
-			"declSigma": 12311.131,
-			"ra_decl_Cov": 1231.31231
+			"decSigma": 12311.131,
+			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
 				"x": 112.1,
@@ -64,12 +64,12 @@
 			"filterName":"my favorite filter",
 			"radec": {
 				"ra": 124142.12414,
-				"decl": 1214141.121
+				"dec": 1214141.121
 				},
 			"radecCov": {
 			"raSigma": 12311.1421,
-			"declSigma": 12311.131,
-			"ra_decl_Cov": 1231.31231
+			"decSigma": 12311.131,
+			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
 				"x": 112.1,
@@ -89,17 +89,17 @@
 			"diaObjectId":34131412,
 			"radec": {
 				"ra": 6534654.12414,
-				"decl": 6544436.121
+				"dec": 6544436.121
 				},
 			"radecCov": {
 				"raSigma": 432.1421,
-				"declSigma": 243.131,
-				"ra_decl_Cov": 243.31231
+				"decSigma": 243.131,
+				"ra_dec_Cov": 243.31231
 				},
 			"radecTai": 134904.12414,
 			"mu": {
 				"muRa": 6534654.12414,
-				"muDecl": 6544436.121
+				"muDec": 6544436.121
 				},
 			"parallax":2.124124,
 			"muParallaxCov": {
@@ -148,17 +148,17 @@
 		"diaObjectId":34131412,
 		"radec": {
 			"ra": 6534654.12414,
-			"decl": 6544436.121
+			"dec": 6544436.121
 			},
 		"radecCov": {
 			"raSigma": 432.1421,
-			"declSigma": 243.131,
-			"ra_decl_Cov": 243.31231
+			"decSigma": 243.131,
+			"ra_dec_Cov": 243.31231
 			},
 		"radecTai": 134904.12414,
 		"mu": {
 			"muRa": 6534654.12414,
-			"muDecl": 6544436.121
+			"muDec": 6544436.121
 			},
 		"parallax":2.124124,
 		"muParallaxCov": {
@@ -182,12 +182,12 @@
 			"filterName":"my favorite filter",
 			"radec": {
 				"ra": 124142.12414,
-				"decl": 1214141.121
+				"dec": 1214141.121
 				},
 			"radecCov": {
 			"raSigma": 12311.1421,
-			"declSigma": 12311.131,
-			"ra_decl_Cov": 1231.31231
+			"decSigma": 12311.131,
+			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
 				"x": 112.1,
@@ -209,12 +209,12 @@
 			"filterName":"my favorite filter",
 			"radec": {
 				"ra": 124142.12414,
-				"decl": 1214141.121
+				"dec": 1214141.121
 				},
 			"radecCov": {
 			"raSigma": 12311.1421,
-			"declSigma": 12311.131,
-			"ra_decl_Cov": 1231.31231
+			"decSigma": 12311.131,
+			"ra_dec_Cov": 1231.31231
 				},
 			"xy": {
 				"x": 112.1,

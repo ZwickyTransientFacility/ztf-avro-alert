@@ -2,17 +2,17 @@
 	"diaObjectId":34131412,
 	"radec": {
 		"ra": 6534654.12414,
-		"decl": 6544436.121
+		"dec": 6544436.121
 		},
 	"radecCov": {
 		"raSigma": 432.1421,
-		"declSigma": 243.131,
-		"ra_decl_Cov": 243.31231
+		"decSigma": 243.131,
+		"ra_dec_Cov": 243.31231
 		},
 	"radecTai": 134904.12414,
 	"mu": {
 		"muRa": 6534654.12414,
-		"muDecl": 6544436.121
+		"muDec": 6544436.121
 		},
 	"parallax":2.124124,
 	"muParallaxCov": {
