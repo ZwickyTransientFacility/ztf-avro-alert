@@ -4,10 +4,10 @@
 	"name": "alert",
 	"doc": "sample avro alert schema v1.0",
 	"fields": [
-		{"name": "alertID", "type": "long", "doc": "add descriptions like this"},
-		{"name": "l1dbID", "type": "long"},
+		{"name": "alertId", "type": "long", "doc": "add descriptions like this"},
+		{"name": "l1dbId", "type": "long"},
 		{"name": "diaSource", "type": "lsst.alert.diaSource"},
-		{"name": "prevDiaSources", "type": [{
+		{"name": "prv_diaSources", "type": [{
 				"type": "array",
 				"items": "lsst.alert.diaSource"}, "null" ]},
 		{"name": "diaObject", "type": ["lsst.diaObject", "null"]},

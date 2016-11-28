@@ -1,30 +1,26 @@
 {
-	"diaObjectId":34131412,
-	"radec": {
-		"ra": 6534654.12414,
-		"dec": 6544436.121
+	"diaObjectId": 281323062375219201,
+	"ra": 351.570546978,
+	"decl": 0.126243049656,
+	"ra_decl_Cov": {
+		"raSigma": 0.00028,
+		"declSigma": 0.00028,
+		"ra_decl_Cov": 0.00029
 		},
-	"radecCov": {
-		"raVar": 432.1421,
-		"decVar": 243.131,
-		"ra_dec_Cov": 243.31231
+	"radecTai": 1480360995,
+	"pmRa": 0.00013,
+	"pmDecl": 0.00014,
+	"parallax": 2.124124,
+	"pm_parallax_Cov": {
+		"pmRaSigma": 0.00013,
+		"pmDeclSigma": 0.00013,
+		"parallaxSigma": 0.00013,
+		"pmRa_pmDecl_Cov": 0.00013,
+		"pmRa_parallax_Cov": 0.00013,
+		"pmDecl_parallax_Cov": 0.00013
 		},
-	"radecTai": 134904.12414,
-	"mu": {
-		"muRa": 6534654.12414,
-		"muDec": 6544436.121
-		},
-	"parallax":2.124124,
-	"muParallaxCov": {
-		"muRaVar": 432.1421,
-		"muDecVar": 432.1421,
-		"parallaxVar": 432.1421,
-		"muRa_muDec_Cov": 432.1421,
-		"muRa_parallax_Cov": 432.1421,
-		"muDec_parallax_Cov": 432.1421
-		},
-	"muParallaxLnL": 1343141.0341,
-	"muParallaxChi2": 1341421.2414,
-	"muParallaxN": 1214,
+	"pmParallaxLnL": 0.00013,
+	"pmParallaxChi2": 0.00013,
+	"pmParallaxNdata": 1214,
 	"flags": 0
 }
