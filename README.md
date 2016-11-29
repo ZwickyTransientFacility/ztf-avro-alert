@@ -17,11 +17,11 @@ python validateAvroNestedSchema.py schema/simple.avsc data/simple.json
 Multiple nested schemas must be passed in order of most internal first:
 
 ```
-python validateAvroNestedSchema.py schema/diasource.avsc schema/diaobject.avsc schema/ssobject.avsc schema/alert.avsc data/alert.json
+python validateAvroNestedSchema.py schema/diasource.avsc schema/diaobject.avsc schema/ssobject.avsc schema/cutout.avsc schema/alert.avsc data/alert.json
 ```
 
 For example, this will not work:
 
 ```
-python validateAvroNestedSchema.py schema/alert.avsc schema/diaobject.avsc schema/ssobject.avsc schema/diasource.avsc data/alert.json
+python validateAvroNestedSchema.py schema/alert.avsc schema/diaobject.avsc schema/ssobject.avsc schema/diasource.avsc schema/cutout.avsc data/alert.json
 ```
