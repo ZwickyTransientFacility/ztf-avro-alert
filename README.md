@@ -1,9 +1,11 @@
 sample-avro-alert
 =================
 
-Repo for a sample alert in Avro format and simple Python code to populate an Avro schema and print. Schemas are given as .avsc files. Data are given as .json files.
+Repo for a sample alert in Avro format and simple Python code to populate an Avro schema and print. Schemas are given as .avsc files. Data are given as .json files. Postage stamp cutout files can be included.
 
 Requires `avro.schema` and `avro.io` which you can get with `pip install avro-python3`.
+
+Jupyter notebooks included in `examples`.
 
 Usage
 -----
@@ -25,3 +27,11 @@ For example, this will not work:
 ```
 python validateAvroNestedSchema.py schema/alert.avsc schema/diaobject.avsc schema/ssobject.avsc schema/diasource.avsc schema/cutout.avsc data/alert.json
 ```
+
+"Postage stamp" cutout files (difference and template images) can be included as optional arguments:
+
+```
+python validateAvroNestedSchema.py schema/diasource.avsc schema/diaobject.avsc schema/ssobject.avsc schema/cutout.avsc schema/alert.avsc data/alert.json --cutoutDiff examples/stamp-40320.fits --cutoutTemp examples/stamp-48960.fits
+```
+
+The collected stamps will then appear in a local 'output' directory.

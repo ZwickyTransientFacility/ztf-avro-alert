@@ -9,6 +9,8 @@ import io
 import json
 import argparse
 import sys
+import os.path
+import hashlib
 
 
 def combine_schemas(schema_files):
@@ -28,6 +30,28 @@ def load_single_avsc(file_path, names):
         json_data = json.load(file_text)
     schema = avro.schema.SchemaFromJSONData(json_data, names)
     return schema
+
+
+def load_stamp(file_path):
+    """Load a cutout postage stamp file to include in alert.
+    """
+    _, fileoutname = os.path.split(file_path)
+    with open(file_path, mode='rb') as f:
+        cutout_data = f.read()
+        cutout_dict = {"fileName": fileoutname, "stampData": cutout_data}
+    return cutout_dict
+
+
+def write_stamp_file(stamp_dict, output_dir):
+    filename = stamp_dict['fileName']
+    try:
+        os.makedirs(output_dir)
+    except OSError:
+        pass
+    out_path = os.path.join(output_dir, filename)
+    with open(out_path, 'wb') as f:
+        f.write(stamp_dict['stampData'])
+    return out_path
 
 
 def write_avro_data(json, avro_schema):
@@ -51,28 +75,68 @@ def read_avro_data(bytes_io, avro_schema):
     return message
 
 
+def check_md5(infile, outfile):
+    with open(infile, 'rb') as f:
+        in_data = f.read()
+        in_md5 = hashlib.md5(in_data).hexdigest()
+    with open(outfile, 'rb') as f:
+        out_data = f.read()
+        out_md5 = hashlib.md5(out_data).hexdigest()
+    return in_md5 == out_md5
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('schema', metavar='file.avsc', type=str, nargs='+',
                         help='schema file(s)')
     parser.add_argument('data', metavar='file.json', type=str,
                         help='json data file to fill the schema')
+    parser.add_argument('--cutoutDiff', metavar='difference.fits', type=str,
+                        help='file for difference image postage stamp')
+    parser.add_argument('--cutoutTemp', metavar='template.fits', type=str,
+                        help='file for template image postage stamp')
 
     args = parser.parse_args()
     json_path = args.data
     schema_files = args.schema
+    cutoutdiff_path = args.cutoutDiff
+    cutouttemp_path = args.cutoutTemp
+
+    alert_schema = combine_schemas(schema_files)
 
     with open(json_path) as file_text:
         json_data = json.load(file_text)
 
-    alert_schema = combine_schemas(schema_files)
+    # Load difference stamp if included
+    if cutoutdiff_path is not None:
+        cutoutDifference = load_stamp(cutoutdiff_path)
+        json_data['cutoutDifference'] = cutoutDifference
+
+    # Load template stamp if included
+    if cutouttemp_path is not None:
+        cutoutTemplate = load_stamp(cutouttemp_path)
+        json_data['cutoutTemplate'] = cutoutTemplate
+
     avro_bytes = write_avro_data(json_data, alert_schema)
     message = read_avro_data(avro_bytes, alert_schema)
 
-    print(message)
-    print("size in bytes of json message: %d" % sys.getsizeof(json_data))
+    # Print message text to screen
+    message_text = {k: message[k] for k in message if k not in ['cutoutDifference', 'cutoutTemplate']}
+    print(message_text)
+
+    # Collect stamps as files written to local directory 'output' and check hashes match expected
+    if message.get('cutoutDifference') is not None:
+        stamp_diff_out = write_stamp_file(message.get('cutoutDifference'), 'output')
+        print('Difference stamp ok:', check_md5(args.cutoutDiff, stamp_diff_out))
+
+    if message.get('cutoutTemplate') is not None:
+        stamp_temp_out = write_stamp_file(message.get('cutoutTemplate'), 'output')
+        print('Template stamp ok:', check_md5(args.cutoutTemp, stamp_temp_out))
+
+    print("size in bytes of json text: %d" % sys.getsizeof(message_text))
     raw_bytes = avro_bytes.getvalue()
     print("size in bytes of avro message: %d" % sys.getsizeof(raw_bytes))
+
 
 if __name__ == "__main__":
     main()
