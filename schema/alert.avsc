@@ -1,0 +1,20 @@
+{
+	"namespace": "lsst",
+	"type": "record",
+	"name": "alert",
+	"doc": "sample avro alert schema v1.0",
+	"fields": [
+		{"name": "alertId", "type": "long", "doc": "add descriptions like this"},
+		{"name": "l1dbId", "type": "long"},
+		{"name": "diaSource", "type": "lsst.alert.diaSource"},
+		{"name": "prv_diaSources", "type": [{
+				"type": "array",
+				"items": "lsst.alert.diaSource"}, "null" ]},
+		{"name": "diaObject", "type": ["lsst.diaObject", "null"]},
+		{"name": "ssObject", "type": ["lsst.ssObject", "null"]},
+		{"name": "diaObjectL2", "type": ["lsst.diaObject", "null"]},
+		{"name": "diaSourcesL2", "type": [{
+				"type": "array",
+				"items": "lsst.alert.diaSource"}, "null"]}
+			]
+}
