@@ -15,6 +15,8 @@
 		{"name": "diaObjectL2", "type": ["lsst.diaObject", "null"]},
 		{"name": "diaSourcesL2", "type": [{
 				"type": "array",
-				"items": "lsst.alert.diaSource"}, "null"]}
+				"items": "lsst.alert.diaSource"}, "null"]},
+		{"name": "cutoutDifference", "type": ["lsst.alert.cutout", "null"]},
+		{"name": "cutoutTemplate", "type": ["lsst.alert.cutout", "null"]}
 			]
 }
