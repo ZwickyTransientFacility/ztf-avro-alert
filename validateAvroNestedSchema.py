@@ -43,6 +43,8 @@ def load_stamp(file_path):
 
 
 def write_stamp_file(stamp_dict, output_dir):
+    """Given a stamp dict that follows the cutout schema, write data to a file in a given directory.
+    """
     filename = stamp_dict['fileName']
     try:
         os.makedirs(output_dir)
@@ -76,6 +78,8 @@ def read_avro_data(bytes_io, avro_schema):
 
 
 def check_md5(infile, outfile):
+    """Compare the MD5 hash values of two files.
+    """
     with open(infile, 'rb') as f:
         in_data = f.read()
         in_md5 = hashlib.md5(in_data).hexdigest()
