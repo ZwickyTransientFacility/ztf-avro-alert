@@ -56,13 +56,13 @@ def write_stamp_file(stamp_dict, output_dir):
     return out_path
 
 
-def write_avro_data(json, avro_schema):
+def write_avro_data(json_data, avro_schema):
     """Encode json into avro format given a schema.
     """
     writer = avro.io.DatumWriter(avro_schema)
     bytes_io = io.BytesIO()
     encoder = avro.io.BinaryEncoder(bytes_io)
-    writer.write(json, encoder)
+    writer.write(json_data, encoder)
     return bytes_io
 
 
