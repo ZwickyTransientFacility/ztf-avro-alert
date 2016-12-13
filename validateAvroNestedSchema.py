@@ -67,7 +67,7 @@ def write_avro_data(json_data, json_schema):
 def read_avro_data(bytes_io, json_schema):
     """Read avro data with fastavro module and decode with a given schema.
     """
-    bytes_io.seek(0)
+    bytes_io.seek(0)  # force schemaless_reader to read from the start of stream, byte offset = 0
     message = fastavro.schemaless_reader(bytes_io, json_schema)
     return message
 

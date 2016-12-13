@@ -3,7 +3,7 @@ sample-avro-alert
 
 Repo for a sample alert in Avro format and simple Python code to populate an Avro schema and print. Schemas are given as .avsc files. Data are given as .json files. Postage stamp cutout files can be included.
 
-Requires `avro.schema` for combining nested schemas, which you can get with `pip install avro-python3`.
+Requires python3 and `avro.schema` for combining nested schemas, which you can get with `pip install avro-python3`. The python2 `avro` is significantly different from `avro-python3` and will not work here without addressing those changes.
 
 Requires `fastavro` for faster serialization, which you can get with `pip install fastavro`.
 
