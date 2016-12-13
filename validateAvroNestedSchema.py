@@ -4,7 +4,7 @@ Schema files have to be given in order of internal nests first.
 """
 
 import avro.schema
-import avro.io
+import fastavro
 import io
 import json
 import argparse
@@ -20,7 +20,7 @@ def combine_schemas(schema_files):
 
     for s in schema_files:
         schema = load_single_avsc(s, known_schemas)
-    return schema
+    return schema.to_json()
 
 
 def load_single_avsc(file_path, names):
@@ -56,24 +56,19 @@ def write_stamp_file(stamp_dict, output_dir):
     return out_path
 
 
-def write_avro_data(json, avro_schema):
-    """Encode json into avro format given a schema.
+def write_avro_data(json_data, json_schema):
+    """Encode json with fastavro module into avro format given a schema.
     """
-    writer = avro.io.DatumWriter(avro_schema)
     bytes_io = io.BytesIO()
-    encoder = avro.io.BinaryEncoder(bytes_io)
-    writer.write(json, encoder)
+    fastavro.schemaless_writer(bytes_io, json_schema, json_data)
     return bytes_io
 
 
-def read_avro_data(bytes_io, avro_schema):
-    """Read avro data and decode with a given schema.
+def read_avro_data(bytes_io, json_schema):
+    """Read avro data with fastavro module and decode with a given schema.
     """
-    raw_bytes = bytes_io.getvalue()
-    bytes_reader = io.BytesIO(raw_bytes)
-    decoder = avro.io.BinaryDecoder(bytes_reader)
-    reader = avro.io.DatumReader(avro_schema)
-    message = reader.read(decoder)
+    bytes_io.seek(0)  # force schemaless_reader to read from the start of stream, byte offset = 0
+    message = fastavro.schemaless_reader(bytes_io, json_schema)
     return message
 
 
