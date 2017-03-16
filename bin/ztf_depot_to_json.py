@@ -2,7 +2,6 @@
 import copy
 import json
 from glob import glob
-# from astropy.io import ascii
 import pandas as pd
 import numpy as np
 import tarfile
@@ -111,7 +110,6 @@ candidate_converters = \
 
 
 def read_ztf_depot_candidate(candidate_file):
-    # tbl = ascii.read(candidate_file, format='fixed_width')
     df = pd.read_table(candidate_file, sep='|', skiprows=2, skipfooter=1,
                        names=candidate_names, converters=candidate_converters)
 
@@ -159,11 +157,3 @@ class DepotCutout:
         df = pd.read_table(f, sep='|', skiprows=2, skipfooter=1,
                            names=history_names, converters=candidate_converters)
         return df
-
-
-# from candidates file, need to:
-#   find and open candcutouts.tar.gz
-#   for each candidate:
-#       parse history
-#       load cutouts
-#       package into json/avro
