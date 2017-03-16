@@ -1,205 +1,28 @@
 {
-	"alertId": 1231321321,
-	"l1dbId": 222222222,
-	"diaSource":
-	{
-		"diaSourceId": 281323062375219200,
-		"ccdVisitId": 111111,
-		"midPointTai": 1480360995,
-		"filterName": "r",
-		"ra": 351.570546978,
-		"decl": 0.126243049656,
-		"ra_decl_Cov": {
-			"raSigma": 0.00028,
-			"declSigma": 0.00028,
-			"ra_decl_Cov": 0.00029
-			},
-		"x": 112.1,
-		"y": 121.1,
-		"x_y_Cov": {
-			"xSigma": 1.2,
-			"ySigma": 1.1,
-			"x_y_Cov": 1.2
-			},
-		"snr": 41.1,
-		"psFlux": 1241.0,
-		"flags": 0
-	},
-	"prv_diaSources": [
-		{
-			"diaSourceId": 281323062375219198,
-			"ccdVisitId": 111111,
-			"midPointTai": 1480360995,
-			"filterName": "r",
-			"ra": 351.570546978,
-			"decl": 0.126243049656,
-			"ra_decl_Cov": {
-				"raSigma": 0.00028,
-				"declSigma": 0.00028,
-				"ra_decl_Cov": 0.00029
-				},
-			"x": 112.1,
-			"y": 121.1,
-			"x_y_Cov": {
-				"xSigma": 1.2,
-				"ySigma": 1.1,
-				"x_y_Cov": 1.2
-				},
-			"snr": 41.1,
-			"psFlux": 1241.0,
-			"flags": 0
-		},
-		{
-			"diaSourceId": 281323062375219199,
-			"ccdVisitId": 111111,
-			"midPointTai": 1480360995,
-			"filterName": "r",
-			"ra": 351.570546978,
-			"decl": 0.126243049656,
-			"ra_decl_Cov": {
-				"raSigma": 0.00028,
-				"declSigma": 0.00028,
-				"ra_decl_Cov": 0.00029
-				},
-			"x": 112.1,
-			"y": 121.1,
-			"x_y_Cov": {
-				"xSigma": 1.2,
-				"ySigma": 1.1,
-				"x_y_Cov": 1.2
-				},
-			"snr": 41.1,
-			"psFlux": 1241.0,
-			"flags": 0
-		}
-			],
-	"diaObject": {
-		"diaObjectId": 281323062375219201,
-		"ra": 351.570546978,
-		"decl": 0.126243049656,
-		"ra_decl_Cov": {
-			"raSigma": 0.00028,
-			"declSigma": 0.00028,
-			"ra_decl_Cov": 0.00029
-			},
-		"radecTai": 1480360995,
-		"pmRa": 0.00013,
-		"pmDecl": 0.00014,
-		"parallax": 2.124124,
-		"pm_parallax_Cov": {
-			"pmRaSigma": 0.00013,
-			"pmDeclSigma": 0.00013,
-			"parallaxSigma": 0.00013,
-			"pmRa_pmDecl_Cov": 0.00013,
-			"pmRa_parallax_Cov": 0.00013,
-			"pmDecl_parallax_Cov": 0.00013
-			},
-		"pmParallaxLnL": 0.00013,
-		"pmParallaxChi2": 0.00013,
-		"pmParallaxNdata": 1214,
-		"flags": 0
-	},
-	"ssObject": {
-		"ssObjectId":5364546,
-		"oe": {
-			"q": 6654.14,
-			"e": 636.121,
-			"i": 5436.2344,
-			"lan": 54325.34,
-			"aop": 344243.3,
-			"M": 131.1241,
-			"epoch": 134141
-			},
-		"arc":2.124124,
-		"orbFitLnL": 1343141.0341,
-		"orbFitChi2": 1341421.2414,
-		"orbFitNdata": 1214,
-		"MOID1": 3141.0,
-		"MOID2": 23432.423,
-		"moidLon1": 2143.213,
-		"moidLon2": 3142.23123,
-		"uH": 13231.231,
-		"uHErr": 13213.213,
-		"uG1": 32131.312,
-		"uG1Err": 31232.2132,
-		"uG2": 231.2313,
-		"uG2Err": 23132.231,
-		"flags": 0
-	},
-
-	"diaObjectL2": {
-		"diaObjectId": 281323062375219201,
-		"ra": 351.570546978,
-		"decl": 0.126243049656,
-		"ra_decl_Cov": {
-			"raSigma": 0.00028,
-			"declSigma": 0.00028,
-			"ra_decl_Cov": 0.00029
-			},
-		"radecTai": 1480360995,
-		"pmRa": 0.00013,
-		"pmDecl": 0.00014,
-		"parallax": 2.124124,
-		"pm_parallax_Cov": {
-			"pmRaSigma": 0.00013,
-			"pmDeclSigma": 0.00013,
-			"parallaxSigma": 0.00013,
-			"pmRa_pmDecl_Cov": 0.00013,
-			"pmRa_parallax_Cov": 0.00013,
-			"pmDecl_parallax_Cov": 0.00013
-			},
-		"pmParallaxLnL": 0.00013,
-		"pmParallaxChi2": 0.00013,
-		"pmParallaxNdata": 1214,
-		"flags": 0
-	},
-	"diaSourcesL2":[
-		{
-			"diaSourceId": 281323062375219198,
-			"ccdVisitId": 111111,
-			"midPointTai": 1480360995,
-			"filterName": "r",
-			"ra": 351.570546978,
-			"decl": 0.126243049656,
-			"ra_decl_Cov": {
-				"raSigma": 0.00028,
-				"declSigma": 0.00028,
-				"ra_decl_Cov": 0.00029
-				},
-			"x": 112.1,
-			"y": 121.1,
-			"x_y_Cov": {
-				"xSigma": 1.2,
-				"ySigma": 1.1,
-				"x_y_Cov": 1.2
-				},
-			"snr": 41.1,
-			"psFlux": 1241.0,
-			"flags": 0
-		},
-		{
-			"diaSourceId": 281323062375219199,
-			"ccdVisitId": 111111,
-			"midPointTai": 1480360995,
-			"filterName": "r",
-			"ra": 351.570546978,
-			"decl": 0.126243049656,
-			"ra_decl_Cov": {
-				"raSigma": 0.00028,
-				"declSigma": 0.00028,
-				"ra_decl_Cov": 0.00029
-				},
-			"x": 112.1,
-			"y": 121.1,
-			"x_y_Cov": {
-				"xSigma": 1.2,
-				"ySigma": 1.1,
-				"x_y_Cov": 1.2
-				},
-			"snr": 41.1,
-			"psFlux": 1241.0,
-			"flags": 0
-		}
-			]
-
+	"alertId": 180965579884028194621986347833716475123,
+	"candidate": "{\"jd\":2457745.7295599999,\"fid\":1,\"pid\":-8770446315,\"diffmaglim\":22.1124992371,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322956_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":-87704463155000,\"isdiffpos\":1,\"tblid\":0,\"nid\":-9,\"rcid\":63,\"field\":515,\"xpos\":2486.0100097656,\"ypos\":619.0100097656,\"ra\":70.3347528,\"dec\":14.6126212,\"magpsf\":18.9927005768,\"sigmapsf\":0.0222520009,\"chipsf\":0.7865359783,\"magap\":18.9979000092,\"sigmagap\":0.0384000018,\"distnr\":0.0201069992,\"magnr\":20.7560005188,\"sigmagnr\":0.0340000018,\"chinr\":0.9139999747,\"sharpnr\":-0.0419999994,\"sky\":-0.2665849924,\"magdiff\":0.0052120001,\"fwhm\":1.8999999762,\"classtar\":0.9819999933,\"mindtoedge\":586.4940185547,\"magfromlim\":3.1145899296,\"seeratio\":1.2589700222,\"aimage\":0.6430000067,\"bimage\":0.6179999709,\"aimagerat\":0.3384209871,\"bimagerat\":0.3252629936,\"elong\":1.0404499769,\"nneg\":1,\"nbad\":0,\"rb\":0.0,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":1.0,\"strcat\":\"null\",\"sgmag\":null,\"sgscore\":null,\"luid\":\"null\",\"name\":\"null\",\"ra_lu\":null,\"dec_lu\":null,\"a\":null,\"b2arat\":null,\"pa\":null,\"dm\":null,\"dmkin\":null,\"btc\":null,\"objtype\":null,\"m21\":null,\"source\":\"null\"}",
+	"cutoutScience": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAALCAAzADMBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APKcebYbipClGIcL2O4cgDpnt24PqKZFwfLVNrFmKsvRMZJ4645/n04p8RJMU4UxqzYAZcfmR9en9evQ+EfGV34O1mSfTIbK5kmi8h3m4HO3H3Tk4I69+cDmudbEkUnmSSB34J2AHAPb16DI9/rSo6MxX5hsADFSCOwJIyR6D0/EgVLtWcmV1BZzk/Iv+NQOqqzO6bjnYuA20nAxkZGBj3/DNNSGPdLlZHYNjpnAbI6dPugc9OvtSmNo59rIpVflQ4YYXA7gYweTnPrUkUgWMQRSRkBvlIUYHbjk8cn3B/VPLSVDGmIwAIymQSuR37dc8Y9euMhnlujNmFjESD5jHBxgEe/AI69cgc1aWd5FDIbQr0G6MMeOOSVJP+elRCQh9iIzHAjUs49M4B45x27jjitvw1B4fvbyeLxLeS2Vg0DlZII8YkGAARzxgnsOnbk1jQtG5eIvIxfcquVGTjnn8fT0NMYyqJBLbNErkFgY9rbTkZOOnB5PuPWjyiCMMI3AIjYEHOCOee4+Ue9I6QytHHHcZbHQIMrnHOR95T375+lHnMoAF3PCMDCCNBj8/Xr75qS2hnuRss7bzJz8xG7kLgkkHIOfwwT2zTSzxxhJWQS7BgdAvcHjvx0457U6KWS2dbqONZREQFCuSp6cEcZPPX379t3xr47vfGGpQXtzYW8Ato0iKoM4Gck7jn1/DPHrWEvkraqsQRsIcscqByBwBx14wf8AColZw2AZN7rlchcqxJAyDz9O1NBiiLRusQZXYfOxB6nrgdamtruS3ZmgeYKeCM8L1zyCMjj1/iGKbKgW4V45FlVxkurggk7c5yP8/SmRIgmaFFIkIwys2QM5wMg9BwME9/qKmw0KZAX7gUlZN3IIwOvrjqcnB59WLGs0YZChyAxycHdzg89fmyccdO2cURrICFlVg2dkZYq2eg25Az2JJ55B9Sacq3LDKy3GP9glQffGR/KoPImRW371DqcuOCAODx159PbPTitbQ4NNOt2UPiCeWCwlYtPJGFLpgfRhyeeef5VVvbeCK+uxZTLJZCR/Jlc7TsyVBPudoBz/AHe/esA86ExKvmyZYTHnAAPRvXk//WppS3m8oRgLNkK45x94gcj6dRz+HFPMIlyIoFD/ADBCq7VJxkknGCMencCpSJQflPmL1DhU+b35bNR3MSJp3mqo3iLeD1wcA/zApImMzyxSYKRXcixjGNo9v8+tKABcrHjcuduG+bIBzjntS2qK1tBkdIy4A4APIzj6CnWK+bbCRyzMp8wZY/eHlgHH4moYmLyXEDMWiQhVQngDfj88Dr1pyzOgCgjA4HyjgV//2Q==",
+	"candid": -87704463155000,
+	"cutoutTemplate": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAALCAAzADMBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APLVVJIQhj2becOGAwFOB9D3+g5GagtW8iby1VI2JKu3VVGMMRznvx0/KiOQhVG8IoAJjPc+g79x16knr36rwR40uPBN9PNZ2UV40kQhdZn2bQOQ2QDgA/mO3eubnlnuPOmuMATsrSOEVVGST8voOe2KjbyV87ylEW4hfM+Vjx+Z/DinTtbpMwdE3Z5ygNMkBMPKyOzHGMEKwOM5APbHTvSlREGmh3NGRkhU+X0B2nqSpGSfXpnFIMxeaflkDDbleCMgZJ7ZIJ/X8JYpVjhQW80DbXBYCIMoJXnGOuMnqM9qhnkieGJIQylFZXjc8Kx6kA/QDnvUMqzvcbJEO5trEs+xk47gdx1/pVmEvLAjxrIyEDDGEsT75qHzDHtCxvG2/YMPna5yAMewIrqPBun+GtQuXHiu8utPsfJZoHjJBkbcAcgKSOM8Ef3a55oI/tcyGZmgZm8suoBIyM4Hrgj9ahjRGYIyyKQAu7b5ZAyQM47jpntmp5Ijbqvl3BE0aGMbWAOBwTn6HH4Z70yRXmDQxysyIVDMUA56Alh1oluEhlaLD/J8vzIueOK0dL0y916RxZWkdzfGIylRjKKM5J/n/wABFUvM3SvIwdGEa7lx/qzx+ee+fpTlOwRyOFkG3dhm3byMdT9COfr6Vt+KvF994u1hLy+tkg2QJCy2q4KLnPJJOR85rn1W3MAbcJN4K7iNpU5wAD36Y+lIt6/2KWBWYK4VmiKZZWzgAfzoiUqm1eQCRxKfX3FSW09xZRzSWUrQgkN5iNjGchvfHseOammjClEgu0uQWBdlJB5YZY5/Ee3X0qrEskkht40ZSqjhyCrMenT1GPxPpSx/aEZZI0XyySAyHOSCDjA6HlevoaUlJ9jOxdmXLDGduM4bHc5zxTY5GiEwlnbd0jZQGLHsB6A9z61GFVgGne5WUgFgjHANJKk5IBt2ZWyH2novA6e45Fb/AIXsdJuPEVkniG4ltNOlVxLcR87nAOBkBgOe2OAfaq15plmNS1EaJMLjTrSZnjuZjgsgyAc8ZJwOeOnArOki+Z8RBpJA2H2nGeSMY46EflSPbo8ccsIJmLjfuIHzdMBh7Z/OlaCIRSRQqokBygZOAO4J/wAO9VryWZrpzHJIE4ACkY6dqsSsYrSUpgFhI2cA4K9CPT8KsAssRgDMYvtZi2EkjaXjyOfqfzqpaO014kUh3R+bGhXsQWBwatwgNaRSkZcCFgfQ4k/+IX8qgCKY7d9oyVMnTjdjrjp3qSyO+13tgttI5HTGccVUSV2jRmbJKj+Vf//Z",
+	"cutoutDifference": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAALCAAzADMBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APJ/9ZY7yG2NG5DqoPBLDJUDpnAx2yDjqKANylAjZLMyEfwkEk8dxyOo7nocU+PLGK4EbIGbaN4xj/eI6d/07ikZ1a5WONoHywzLkLliAFGBycev17HlgWPyWQyS7+VGVAOAf1xtGR6Ee9PjcOwVt58sDdsPHYEkE49Bnp+YqZVNyPOf7z8/dH/xVQMFSV5HQHnYmM7cgcfQYPXtz+LI4o2aVHV2kV8ZJ6K2QcY46KOfY04xstwEZFwhwnB4XHTI7dTnNPjfA+zoylc4jYY7Hjn05P0I/MWBZQ8Y2oOE2ghiBjjJzjkknHufwFj8sOwhYwkgiRs5IxnuM4wQMHrnvip/tLMSQ1jjOPmCkjHuVyaYHPmbUDSfKEBZh0xkgNxknnjuOOKPMRvMSQxrHIMOyrtVO2MZ6YPbHQ+9FvKrxmImQyMCocDk4Gefx9KbI06JKJbXykkbLqY8MV/ve2Qc5+nrTFjLP0WNufLbIbPzDB57g7fr0pWW3dolScbyD8oXlAcZII+8p598/ShJJNikXk8IIyEWNQBn/OfemqXRAkERLbhxuOSMZ4OQc9umDk8Zpzb4oVikePzSvy5OAMZIPGRn2456iljlktpBdQxiQQsFTY5244OMcZOT+vftveN/Hd74w1C3v7mxtYfsqLFtXkdSSdxz3P4A/jWIpRbZUiVDtQkk5AA+UcAccnIwf8KiCsJ1I8zzGX5W+X5WORyD2x06UwtDEzpKkIdWI+fO7rxnHGalhumjlyrTFTlShOQpGc8gjOMdj3FRuoW5Eq4ZXUncHBBJAz2/H8KWNYklaMA+Ywwybvu9eMg9jxgnv7YqYjyoznbnywDtfPIPA688++T60xYhLFuj8vBAY5bad/48H5snnHTtnFCRyEoskRDbtqbypB6DbkD1ySeeQfXNSBbo58qWUpkgFflB564JFV0gkjRy8jJvUkP0Ixwcjryeo9s1IT5BRLgZ3ZYqcblx6nkcnHU9u1NkyjuzPH5blthDcKvTr/wHGT6UIZJ48xbBI+W80nJAAPRvXr7GmjyJjGg2rLwjAZwRuODx246jnHtxT/LMzZSABsMFZBtVjtzk8YIx6e31qzHG4QYAmHUSbV+b35bNV7mGNbDzgv7xYVYH0JAP86igc3EkySY2xTSeXtULtwGPb6f5zU8iKkm0DIw4+b5uBnA57VHbopiiXHyiORgBwAflGcfQn86l08ebA7yMzMr7gSx6jywP5mq+5mubm2ZmMCEKqE8D5wPzwOvWp/MaMlFwFUkAbQcCv//Z",
+	"prv_candidates": [
+		"{\"jd\":2457745.6346,\"fid\":1,\"pid\":-8865400115,\"diffmaglim\":22.1399002075,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122313460_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6521600001,\"fid\":1,\"pid\":-8847840115,\"diffmaglim\":22.1369991302,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122315216_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6526299999,\"fid\":1,\"pid\":-8847380115,\"diffmaglim\":22.1355991364,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122315262_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6530900002,\"fid\":1,\"pid\":-8846920115,\"diffmaglim\":22.1352996826,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122315309_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6535499999,\"fid\":1,\"pid\":-8846450115,\"diffmaglim\":22.1417007446,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122315355_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6540199998,\"fid\":1,\"pid\":-8845990115,\"diffmaglim\":22.1357002258,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc01\\/20161223\\/sciprod\\/fr000551-000600\\/ztf_2016122315401_000565_sg_c01_o_q2_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6544900001,\"fid\":1,\"pid\":-8845513615,\"diffmaglim\":22.1348991394,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122315449_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.68022,\"fid\":1,\"pid\":-8819793615,\"diffmaglim\":22.1389007568,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122318022_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6806800002,\"fid\":1,\"pid\":-8819323615,\"diffmaglim\":22.1401996613,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122318068_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.68114,\"fid\":1,\"pid\":-8818863615,\"diffmaglim\":22.1390991211,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122318114_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6816099999,\"fid\":1,\"pid\":-8818403615,\"diffmaglim\":22.1403999329,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122318160_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6820700001,\"fid\":1,\"pid\":-8817933615,\"diffmaglim\":22.1420993805,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc36\\/20161223\\/sciprod\\/fr001501-001550\\/ztf_2016122318207_001514_sg_c10_o_q1_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.6978699998,\"fid\":1,\"pid\":-8802136315,\"diffmaglim\":22.1147994995,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122319787_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.7277099998,\"fid\":1,\"pid\":-8772296315,\"diffmaglim\":22.1182003021,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322770_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.72817,\"fid\":1,\"pid\":-8771836315,\"diffmaglim\":22.1081008911,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322817_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.7286399999,\"fid\":1,\"pid\":-8771376315,\"diffmaglim\":22.1089992523,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322863_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.7291000001,\"fid\":1,\"pid\":-8770906315,\"diffmaglim\":22.1135005951,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322909_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":\"null\",\"isdiffpos\":\"null\",\"tblid\":\"null\",\"nid\":\"null\",\"rcid\":\"null\",\"field\":\"null\",\"xpos\":null,\"ypos\":null,\"ra\":null,\"dec\":null,\"magpsf\":null,\"sigmapsf\":null,\"chipsf\":null,\"magap\":null,\"sigmagap\":null,\"distnr\":null,\"magnr\":null,\"sigmagnr\":null,\"chinr\":null,\"sharpnr\":null,\"sky\":null,\"magdiff\":null,\"fwhm\":null,\"classtar\":null,\"mindtoedge\":null,\"magfromlim\":null,\"seeratio\":null,\"aimage\":null,\"bimage\":null,\"aimagerat\":null,\"bimagerat\":null,\"elong\":null,\"nneg\":\"null\",\"nbad\":\"null\",\"rb\":null,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":null}",
+		"{\"jd\":2457745.7295599999,\"fid\":1,\"pid\":-8770446315,\"diffmaglim\":22.1124992371,\"pdiffimfilename\":\"\\/ztf\\/ops\\/realtime\\/rc63\\/20161223\\/sciprod\\/fr000501-000550\\/ztf_2016122322956_000515_sg_c16_o_q4_scimrefdiffimg.fits\",\"programpi\":\"Kulkarni\",\"programid\":64,\"candid\":-87704463155000,\"isdiffpos\":1,\"tblid\":0,\"nid\":-9,\"rcid\":63,\"field\":515,\"xpos\":2486.0100097656,\"ypos\":619.0100097656,\"ra\":70.3347528,\"dec\":14.6126212,\"magpsf\":18.9927005768,\"sigmapsf\":0.0222520009,\"chipsf\":0.7865359783,\"magap\":18.9979000092,\"sigmagap\":0.0384000018,\"distnr\":0.0201069992,\"magnr\":20.7560005188,\"sigmagnr\":0.0340000018,\"chinr\":0.9139999747,\"sharpnr\":-0.0419999994,\"sky\":-0.2665849924,\"magdiff\":0.0052120001,\"fwhm\":1.8999999762,\"classtar\":0.9819999933,\"mindtoedge\":586.4940185547,\"magfromlim\":3.1145899296,\"seeratio\":1.2589700222,\"aimage\":0.6430000067,\"bimage\":0.6179999709,\"aimagerat\":0.3384209871,\"bimagerat\":0.3252629936,\"elong\":1.0404499769,\"nneg\":1,\"nbad\":0,\"rb\":0.0,\"ssdistnr\":null,\"ssmagnr\":null,\"ssnamenr\":\"null\",\"sumrat\":1.0}"
+	]
 }
