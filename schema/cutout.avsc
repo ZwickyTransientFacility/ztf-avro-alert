@@ -1,9 +1,9 @@
 {
-	"namespace": "lsst.alert",
+	"namespace": "ztf.alert",
 	"type": "record",
 	"name": "cutout",
 	"fields": [
 		{"name": "fileName", "type": "string"},
-		{"name": "stampData", "type": "bytes"}
+		{"name": "stampData", "type": "string", "doc": "base64 encoded jpeg"}
 			]
 }
