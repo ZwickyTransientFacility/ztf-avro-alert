@@ -16,6 +16,9 @@ def load_all_candidates():
     for candidate_file in candidate_files:
         pass
 
+# temporary single event testing:
+candidate_file = '../data/ztf_2016122322956_000515_sg_c16_o_q4_cands.txt'
+
 
 def write_json(candidate_file, outdir='../data/'):
 
