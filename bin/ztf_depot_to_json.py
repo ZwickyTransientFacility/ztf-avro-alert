@@ -25,10 +25,10 @@ def write_json(candidate_file, outdir='../data/'):
         alertId = uuid.uuid4().int
         alert = {"alertId": alertId,
                  "candid": row.candid}
-        alert['candidate'] = row.to_json()
+        alert['candidate'] = row.to_dict()
         df_hist = dc.read_history(row.candid)
         alert['prv_candidates'] = \
-            [hrow.to_json() for (j, hrow) in df_hist.iterrows()]
+            [hrow.to_dict() for (j, hrow) in df_hist.iterrows()]
         alert['cutoutScience'] = dc.read_sci(row.candid, row.pid)
         alert['cutoutTemplate'] = dc.read_ref(row.candid, row.pid)
         alert['cutoutDifference'] = dc.read_scimref(row.candid, row.pid)
@@ -78,11 +78,11 @@ def str2val(tok, converter, null):
     else:
         return null
 
-str2double = lambda tok: str2val(tok, np.float64, np.nan)
-str2float = lambda tok: str2val(tok, np.float32, np.nan)
-str2long = lambda tok: str2val(tok, np.int64, 'null')
-str2int = lambda tok: str2val(tok, np.int32, 'null')
-str2str = lambda tok: str2val(tok, str, 'null')
+str2double = lambda tok: str2val(tok, float, None)
+str2float = lambda tok: str2val(tok, float, None)
+str2long = lambda tok: str2val(tok, long, None)
+str2int = lambda tok: str2val(tok, int, None)
+str2str = lambda tok: str2val(tok, str, None)
 
 candidate_converters = \
     {'jd': str2double, 'fid': str2int, 'pid': str2long,
@@ -140,7 +140,8 @@ class DepotCutout:
             member = '{}/candid{}_ref.jpg'.format(self.prefix, candid)
 
         f = self.tf.extractfile(member)
-        return base64.b64encode(f.read())
+        # return base64.b64encode(f.read())
+        return f.read()
 
     def read_sci(self, candid, pid):
         return self.read_image(candid, pid, 'sci')
@@ -156,4 +157,6 @@ class DepotCutout:
         f = self.tf.extractfile(member)
         df = pd.read_table(f, sep='|', skiprows=2, skipfooter=1,
                            names=history_names, converters=candidate_converters)
-        return df
+
+        # replace NaNs with None (null).  Changes all dtypes to object
+        return df.where((pd.notnull(df)), None)
