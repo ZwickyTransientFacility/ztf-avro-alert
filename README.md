@@ -16,5 +16,10 @@ On the command line, pass schema files first and then a single json data file la
 Multiple nested schemas must be passed in order of most internal first:
 
 ```
-python validateAvroNestedSchema.py schema/candidate.avsc  schema/cutout.avsc schema/alert.avsc data/alert.json
+python validateAvroNestedSchema.py \
+  schema/candidate.avsc \
+  schema/cutout.avsc \
+  schema/alert.avsc \
+  data/alert.json \
+  --cutoutSci data/ztf_2016122322956_000515_sg_c16_o_q4_candcutouts/candid-87704463155001_pid-8770446315_targ_sci.jpg
 ```
