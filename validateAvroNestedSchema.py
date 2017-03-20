@@ -91,49 +91,64 @@ def main():
                         help='schema file(s)')
     parser.add_argument('data', metavar='file.json', type=str,
                         help='json data file to fill the schema')
-    # parser.add_argument('--cutoutDiff', metavar='difference.fits', type=str,
-    #                    help='file for difference image postage stamp')
-    # parser.add_argument('--cutoutTemp', metavar='template.fits', type=str,
-    #                    help='file for template image postage stamp')
+    parser.add_argument('--cutoutSci', metavar='science.jpg', type=str,
+                        help='file for science image postage stamp')
+    parser.add_argument('--cutoutTemp', metavar='template.jpg', type=str,
+                        help='file for template image postage stamp')
+    parser.add_argument('--cutoutDiff', metavar='difference.jpg', type=str,
+                        help='file for difference image postage stamp')
+
 
     args = parser.parse_args()
     json_path = args.data
     schema_files = args.schema
-    #cutoutdiff_path = args.cutoutDiff
-    #cutouttemp_path = args.cutoutTemp
+    cutoutsci_path = args.cutoutSci
+    cutouttemp_path = args.cutoutTemp
+    cutoutdiff_path = args.cutoutDiff
 
     alert_schema = combine_schemas(schema_files)
 
     with open(json_path) as file_text:
         json_data = json.load(file_text)
 
-    # Load difference stamp if included
-    # if cutoutdiff_path is not None:
-    #    cutoutDifference = load_stamp(cutoutdiff_path)
-    #    json_data['cutoutDifference'] = cutoutDifference
+    # Load science stamp if included
+    if cutoutsci_path is not None:
+        cutoutTemplate = load_stamp(cutoutsci_path)
+        json_data['cutoutScience'] = cutoutTemplate
 
     # Load template stamp if included
-    # if cutouttemp_path is not None:
-    #    cutoutTemplate = load_stamp(cutouttemp_path)
-    #    json_data['cutoutTemplate'] = cutoutTemplate
-#
+    if cutouttemp_path is not None:
+        cutoutTemplate = load_stamp(cutouttemp_path)
+        json_data['cutoutTemplate'] = cutoutTemplate
+
+    # Load difference stamp if included
+    if cutoutdiff_path is not None:
+        cutoutDifference = load_stamp(cutoutdiff_path)
+        json_data['cutoutDifference'] = cutoutDifference
+
+
     avro_bytes = write_avro_data(json_data, alert_schema)
     message = read_avro_data(avro_bytes, alert_schema)
 
     # Print message text to screen
     message_text = {k: message[k] for k in message if k not in [
-        'cutoutDifference', 'cutoutTemplate']}
+        'cutoutScience', 'cutoutDifference', 'cutoutTemplate']}
     print(message_text)
 
     # Collect stamps as files written to local directory 'output' and check hashes match expected
-#    if message.get('cutoutDifference') is not None:
-#        stamp_diff_out = write_stamp_file(message.get('cutoutDifference'), 'output')
-#        print('Difference stamp ok:', check_md5(args.cutoutDiff, stamp_diff_out))
-#
-#    if message.get('cutoutTemplate') is not None:
-#        stamp_temp_out = write_stamp_file(message.get('cutoutTemplate'), 'output')
-#        print('Template stamp ok:', check_md5(args.cutoutTemp, stamp_temp_out))
-#
+    if message.get('cutoutScience') is not None:
+        stamp_temp_out = write_stamp_file(message.get('cutoutScience'), 'output')
+        print('Science stamp ok:', check_md5(args.cutoutSci, stamp_temp_out))
+
+    if message.get('cutoutTemplate') is not None:
+        stamp_temp_out = write_stamp_file(message.get('cutoutTemplate'), 'output')
+        print('Template stamp ok:', check_md5(args.cutoutTemp, stamp_temp_out))
+
+    if message.get('cutoutDifference') is not None:
+        stamp_diff_out = write_stamp_file(message.get('cutoutDifference'), 'output')
+        print('Difference stamp ok:', check_md5(args.cutoutDiff, stamp_diff_out))
+
+
     print("size in bytes of json text: %d" % sys.getsizeof(message_text))
     raw_bytes = avro_bytes.getvalue()
     print("size in bytes of avro message: %d" % sys.getsizeof(raw_bytes))
