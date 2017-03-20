@@ -4,6 +4,6 @@
 	"name": "cutout",
 	"fields": [
 		{"name": "fileName", "type": "string"},
-		{"name": "stampData", "type": "string", "doc": "base64 encoded jpeg"}
+		{"name": "stampData", "type": "bytes", "doc": "jpeg"}
 			]
 }
