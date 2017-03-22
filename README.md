@@ -21,5 +21,7 @@ python validateAvroNestedSchema.py \
   schema/cutout.avsc \
   schema/alert.avsc \
   data/alert.json \
-  --cutoutSci data/ztf_2016122322956_000515_sg_c16_o_q4_candcutouts/candid-87704463155001_pid-8770446315_targ_sci.jpg
+  --cutoutSci data/ztf_2016122322956_000515_sg_c16_o_q4_candcutouts/candid-87704463155000_pid-8770446315_targ_sci.jpg \
+  --cutoutTemp data/ztf_2016122322956_000515_sg_c16_o_q4_candcutouts/candid-87704463155000_ref.jpg \
+  --cutoutDiff data/ztf_2016122322956_000515_sg_c16_o_q4_candcutouts/candid-87704463155000_pid-8770446315_targ_scimref.jpg
 ```
