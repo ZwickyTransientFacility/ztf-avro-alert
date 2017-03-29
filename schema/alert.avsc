@@ -9,7 +9,7 @@
 		{"name": "candidate", "type": "ztf.alert.candidate"},
 		{"name": "prv_candidates", "type": [{
 				"type": "array",
-				"items": "ztf.alert.candidate"}, "null" ], "default": null},
+				"items": "ztf.alert.prv_candidate"}, "null" ], "default": null},
 		{"name": "cutoutScience", "type": ["ztf.alert.cutout", "null"], "default": null},
 		{"name": "cutoutTemplate", "type": ["ztf.alert.cutout", "null"], "default": null},
 		{"name": "cutoutDifference", "type": ["ztf.alert.cutout", "null"], "default": null}
