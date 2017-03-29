@@ -1,6 +1,6 @@
 {
 	"namespace": "ztf.alert",
-	"name": "candidate",
+	"name": "prv_candidate",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -48,22 +48,6 @@
 		{"name": "ssdistnr", "type": ["float", "null"], "default": null, "doc": "distance to nearest known solar system object (arcsec)"},
 		{"name": "ssmagnr", "type": ["float", "null"], "default": null, "doc": "magnitude of nearest known solar system object (usually V-band from MPC archive) (mag)"},
 		{"name": "ssnamenr", "type": ["string", "null"], "default": null, "doc": "name of nearest known solar system object (from MPC archive)"},
-		{"name": "sumrat", "type": ["float", "null"], "default": null, "doc": "Ratio: sum(pixels) / sum(|pixels|) in a 5 x 5 pixel stamp where stamp is first median-filtered to mitigate outliers"},
-		{"name": "strcat", "type": ["int", "null"], "default": null, "doc": "Catalog from which nearest source (within 1.5 arcsec) in Stars DB table was drawn: 1 = PTF reference image catalogs; 2 = SDSS catalog; 3 = PS1 catalog"},
-		{"name": "sgmag", "type": ["float", "null"], "default": null, "doc": "Magnitude of closest source from the catalog indicated by strcat (mag)"},
-		{"name": "sgscore", "type": ["float", "null"], "default": null, "doc": "Star/Galaxy score; definition depends on strcat"},
-		{"name": "luid", "type": ["long", "null"], "default": null, "doc": "ID of closest object in the Local Universe DB table using elliptical search"},
-		{"name": "name", "type": ["string", "null"], "default": null, "doc": "Name of closest object from the Local Universe table"},
-		{"name": "ra_lu", "type": ["double", "null"], "default": null, "doc": "R.A. of closest object from the Local Universe table; J2000 (deg)"},
-		{"name": "dec_lu", "type": ["double", "null"], "default": null, "doc": "Dec. of closest object from the Local Universe table; J2000 (deg)"},
-		{"name": "a", "type": ["float", "null"], "default": null, "doc": "Semi-major axis of elliptical isophote of closest object from the Local Universe table (pixels)"},
-		{"name": "b2arat", "type": ["float", "null"], "default": null, "doc": "Ratio of semi-minor axis to semi-major axis of closest object from the Local Universe table"},
-		{"name": "pa", "type": ["float", "null"], "default": null, "doc": " Position angle of elliptical isophote of closest object from the Local Universe table (deg)"},
-		{"name": "dm", "type": ["float", "null"], "default": null, "doc": "Distance modulus of closest object from the Local Universe table [mag]"},
-		{"name": "dmkin", "type": ["float","null"], "default": null, "doc": "Kinematic distance modulus of closest object from the Local Universe table [mag]"},
-		{"name": "btc", "type": ["float", "null"], "default": null, "doc": "Corrected absolute B-band magnitude of closest object from the Local Universe table [mag]"},
-		{"name": "objtype", "type": ["float", "null"], "default": null, "doc": "Galaxy morphological type of closest object from the Local Universe table"},
-		{"name": "m21", "type": ["float", "null"], "default": null, "doc": "21-cm magnitude of closest object from the Local Universe table"},
-		{"name": "source", "type": ["string", "null"], "default": null, "doc": "Catalog from which closest object in the Local Universe table was drawn"}
+		{"name": "sumrat", "type": ["float", "null"], "default": null, "doc": "Ratio: sum(pixels) / sum(|pixels|) in a 5 x 5 pixel stamp where stamp is first median-filtered to mitigate outliers"}
 			]
 }
