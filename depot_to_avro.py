@@ -7,25 +7,34 @@ import numpy as np
 import tarfile
 import uuid
 import base64
+import io
+import fastavro
+from validateAvroNestedSchema import combine_schemas
+
+schema_files = ['schema/candidate.avsc', 'schema/prv_candidate.avsc',
+                'schema/cutout.avsc', 'schema/alert.avsc']
+
+alert_schema = combine_schemas(schema_files)
 
 
 def load_all_candidates():
     """Take a sample ztf-depot directory and convert all candidates into json"""
-    base_dir = '../data/ztf-depot/'
+    base_dir = 'data/ztf-depot/'
     candidate_files = glob(base_dir + '*/*/public/*/*cands.txt')
     for candidate_file in candidate_files:
         pass
 
 # temporary single event testing:
-candidate_file = '../data/ztf_2016122322956_000515_sg_c16_o_q4_cands.txt'
+candidate_file = 'data/ztf_2016122322956_000515_sg_c16_o_q4_cands.txt'
 
 
-def write_json(candidate_file, outdir='../data/'):
+def write_avro(candidate_file, schema=alert_schema, outdir='data/'):
 
     df = read_ztf_depot_candidate(candidate_file)
     dc = DepotCutout(candidate_file)
     for i, row in df.iterrows():
-        alertId = uuid.uuid4().int
+        # TODO: make the alert id something meaningful and distinct from candid
+        alertId = np.abs(row.candid)
         alert = {"alertId": alertId,
                  "candid": row.candid}
         alert['candidate'] = row.to_dict()
@@ -35,11 +44,9 @@ def write_json(candidate_file, outdir='../data/'):
         alert['cutoutScience'] = dc.read_sci(row.candid, row.pid)
         alert['cutoutTemplate'] = dc.read_ref(row.candid, row.pid)
         alert['cutoutDifference'] = dc.read_scimref(row.candid, row.pid)
-        output_json = json.dumps(
-            alert, indent=4, separators=(',', ': '))
 
-        with open('{}/{}.json'.format(outdir, alertId), 'w') as f:
-            f.write(output_json)
+        with open('{}/{}.avro'.format(outdir, alertId), 'wb') as f:
+            fastavro.schemaless_writer(f, schema, alert)
 
 
 # parsing these fixed width sql dumps is gross.  For now it looks like I need to
@@ -83,7 +90,8 @@ def str2val(tok, converter, null):
 
 str2double = lambda tok: str2val(tok, float, None)
 str2float = lambda tok: str2val(tok, float, None)
-str2long = lambda tok: str2val(tok, long, None)
+# python 3 has no long
+str2long = lambda tok: str2val(tok, int, None)
 str2int = lambda tok: str2val(tok, int, None)
 str2str = lambda tok: str2val(tok, str, None)
 
@@ -142,9 +150,9 @@ class DepotCutout:
         else:
             member = '{}/candid{}_ref.jpg'.format(self.prefix, candid)
 
+        # returns bytes, which is what we want
         f = self.tf.extractfile(member)
-        # return base64.b64encode(f.read())
-        return f.read()
+        return {'fileName': member, 'stampData': f.read()}
 
     def read_sci(self, candid, pid):
         return self.read_image(candid, pid, 'sci')
@@ -157,8 +165,16 @@ class DepotCutout:
 
     def read_history(self, candid):
         member = '{}/candid{}_history.txt'.format(self.prefix, candid)
+        # tarfile returns this as bytes, which requires an annoying
+        # workaround to get into pandas
         f = self.tf.extractfile(member)
-        df = pd.read_table(f, sep='|', skiprows=2, skipfooter=1,
+        # Python 3: read to bytes...
+        b = f.read()
+        #... and decode
+        data = b.decode('ascii')
+        # and make a file-like object again...
+        fs = io.StringIO(data)
+        df = pd.read_table(fs, sep='|', skiprows=2, skipfooter=1,
                            names=history_names, converters=candidate_converters)
 
         # replace NaNs with None (null).  Changes all dtypes to object
