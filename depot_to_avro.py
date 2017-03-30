@@ -39,8 +39,15 @@ def write_avro(candidate_file, schema=alert_schema, outdir='data/'):
                  "candid": row.candid}
         alert['candidate'] = row.to_dict()
         df_hist = dc.read_history(row.candid)
-        alert['prv_candidates'] = \
-            [hrow.to_dict() for (j, hrow) in df_hist.iterrows()]
+        hist = [hrow.to_dict() for (j, hrow) in df_hist.iterrows()]
+        # can't get pandas to use native types with the Nones, and
+        # avro doesn't handle numpy types
+        hist_retyped = []
+        for hrow in hist:
+            hist_retyped.append(
+                {k: candidate_converters[k](v) for (k, v) in hrow.items()})
+
+        alert['prv_candidates'] = hist_retyped
         alert['cutoutScience'] = dc.read_sci(row.candid, row.pid)
         alert['cutoutTemplate'] = dc.read_ref(row.candid, row.pid)
         alert['cutoutDifference'] = dc.read_scimref(row.candid, row.pid)
@@ -120,6 +127,15 @@ candidate_converters = \
      'source': str2str}
 
 
+# def retype(x):
+#    if type(x) is np.int64:
+#        return int(x)
+#    elif type(x) is np.float64:
+#        return float(x)
+#    else:
+#        return x
+
+
 def read_ztf_depot_candidate(candidate_file):
     df = pd.read_table(candidate_file, sep='|', skiprows=2, skipfooter=1,
                        names=candidate_names, converters=candidate_converters)
@@ -172,10 +188,15 @@ class DepotCutout:
         b = f.read()
         #... and decode
         data = b.decode('ascii')
+        # drop the last footer line  so  we don't need skipfooter and
+        # read_table can use the C parser
+        data = '\n'.join(data.split('\n')[:-2])
         # and make a file-like object again...
         fs = io.StringIO(data)
-        df = pd.read_table(fs, sep='|', skiprows=2, skipfooter=1,
-                           names=history_names, converters=candidate_converters)
+        df = pd.read_table(fs, sep='|', skiprows=2,
+                           names=history_names, dtype=str)
+        # converters=candidate_converters)
 
         # replace NaNs with None (null).  Changes all dtypes to object
-        return df.where((pd.notnull(df)), None)
+        # return df.where((pd.notnull(df)), None)
+        return df
