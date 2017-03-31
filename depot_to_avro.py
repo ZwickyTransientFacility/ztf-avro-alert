@@ -22,7 +22,10 @@ def load_all_candidates():
     base_dir = 'data/ztf-depot/'
     candidate_files = glob(base_dir + '*/*/public/*/*cands.txt')
     for candidate_file in candidate_files:
-        pass
+        try:
+            write_avro(candidate_file, outdir='data/ztf_avro_packets')
+        except:
+            print(f'Bad candidate: {candidate_file}')
 
 # temporary single event testing:
 candidate_file = 'data/ztf_2016122322956_000515_sg_c16_o_q4_cands.txt'
@@ -39,15 +42,18 @@ def write_avro(candidate_file, schema=alert_schema, outdir='data/'):
                  "candid": row.candid}
         alert['candidate'] = row.to_dict()
         df_hist = dc.read_history(row.candid)
-        hist = [hrow.to_dict() for (j, hrow) in df_hist.iterrows()]
-        # can't get pandas to use native types with the Nones, and
-        # avro doesn't handle numpy types
-        hist_retyped = []
-        for hrow in hist:
-            hist_retyped.append(
-                {k: candidate_converters[k](v) for (k, v) in hrow.items()})
+        if df_hist is None:
+            alert['prv_candidates'] = None
+        else:
+            hist = [hrow.to_dict() for (j, hrow) in df_hist.iterrows()]
+            # can't get pandas to use native types with the Nones, and
+            # avro doesn't handle numpy types
+            hist_retyped = []
+            for hrow in hist:
+                hist_retyped.append(
+                    {k: candidate_converters[k](v) for (k, v) in hrow.items()})
+            alert['prv_candidates'] = hist_retyped
 
-        alert['prv_candidates'] = hist_retyped
         alert['cutoutScience'] = dc.read_sci(row.candid, row.pid)
         alert['cutoutTemplate'] = dc.read_ref(row.candid, row.pid)
         alert['cutoutDifference'] = dc.read_scimref(row.candid, row.pid)
@@ -183,7 +189,10 @@ class DepotCutout:
         member = '{}/candid{}_history.txt'.format(self.prefix, candid)
         # tarfile returns this as bytes, which requires an annoying
         # workaround to get into pandas
-        f = self.tf.extractfile(member)
+        try:
+            f = self.tf.extractfile(member)
+        except KeyError:
+            return None
         # Python 3: read to bytes...
         b = f.read()
         #... and decode
