@@ -21,11 +21,13 @@ schema_files = ['schema/candidate.avsc', 'schema/prv_candidate.avsc',
 alert_schema = avro.schema.Parse(json.dumps(combine_schemas(schema_files)))
 
 
-def load_all_candidates():
+def load_all_candidates(max_candidates=None):
     """Take a sample ztf-depot directory and convert all candidates into json"""
     base_dir = 'data/ztf-depot/'
     candidate_files = glob(base_dir + '*/*/public/*/*cands.txt')
-    for candidate_file in candidate_files:
+    for i, candidate_file in enumerate(candidate_files):
+        if (max_candidates is not None) and (i > max_candidates):
+            return
         try:
             write_avro(candidate_file, outdir='data/ztf_avro_packets')
         except:
