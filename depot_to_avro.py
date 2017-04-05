@@ -8,13 +8,17 @@ import tarfile
 import uuid
 import base64
 import io
-import fastavro
+# fastavro can't handle nested schemas
+#import fastavro
+from avro.datafile import DataFileReader, DataFileWriter
+from avro.io import DatumReader, DatumWriter
+import avro.schema
 from validateAvroNestedSchema import combine_schemas
 
 schema_files = ['schema/candidate.avsc', 'schema/prv_candidate.avsc',
                 'schema/cutout.avsc', 'schema/alert.avsc']
 
-alert_schema = combine_schemas(schema_files)
+alert_schema = avro.schema.Parse(json.dumps(combine_schemas(schema_files)))
 
 
 def load_all_candidates():
@@ -37,7 +41,7 @@ def write_avro(candidate_file, schema=alert_schema, outdir='data/'):
     dc = DepotCutout(candidate_file)
     for i, row in df.iterrows():
         # TODO: make the alert id something meaningful and distinct from candid
-        alertId = np.abs(row.candid)
+        alertId = int(np.abs(row.candid))
         alert = {"alertId": alertId,
                  "candid": row.candid}
         alert['candidate'] = row.to_dict()
@@ -59,7 +63,11 @@ def write_avro(candidate_file, schema=alert_schema, outdir='data/'):
         alert['cutoutDifference'] = dc.read_scimref(row.candid, row.pid)
 
         with open('{}/{}.avro'.format(outdir, alertId), 'wb') as f:
-            fastavro.schemaless_writer(f, schema, alert)
+            #fastavro.schemaless_writer(f, schema, alert)
+            #fastavro.writer(f, schema, alert)
+            writer = DataFileWriter(f, DatumWriter(), schema)
+            writer.append(alert)
+            writer.close()
 
 
 # parsing these fixed width sql dumps is gross.  For now it looks like I need to
