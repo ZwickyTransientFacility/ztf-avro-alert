@@ -7,10 +7,22 @@ These documents are for schema v1.1.
 
 ZTF uses nested schemas to organize the data in the alert packet.
 
-`ztf.alert` (defined in [`alert.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/alert.avsc)) is the top-level namespace.  In turn
+`ztf.alert` (defined in [`alert.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/alert.avsc)) is the top-level namespace.  `ztf.alert` in turn relies on [`candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/candidate.avsc), [`prv_candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/prv_candidate.avsc), and [`cutout.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/cutout.avsc).
 
 
 ### ztf.alert
+
+The top-level alert contains the following fields:
+
+| Field | Type | Contents |
+|:--------|:-------:|--------:|
+| `alertId` | long | unique identifier for the alert |
+| `candid` | long | unique identifier for the subtraction candidate |
+| `candidate` | `ztf.alert.candidate` | candidate record |
+| `prv_candidates` | array of `ztf.alert.prv_candidate` or null | candidate records for 30 days' past history |
+| `cutoutScience` | `ztf.alert.cutout` or null  | cutout of the science image |
+| `cutoutTemplate` | `ztf.alert.cutout` or null  | cutout of the coadded reference image |
+| `cutoutDifference` | `ztf.alert.cutout` or null  | cutout of the resulting difference image |
 
 
 ### ztf.alert.candidate
