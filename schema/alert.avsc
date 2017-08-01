@@ -2,7 +2,8 @@
 	"namespace": "ztf",
 	"type": "record",
 	"name": "alert",
-	"doc": "sample avro alert schema v1.0",
+	"doc": "avro alert schema",
+	"version": "1.1",
 	"fields": [
 		{"name": "alertId", "type": "long", "doc": "add descriptions like this"},
 		{"name": "candid", "type": "long"},
