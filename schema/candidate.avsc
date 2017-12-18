@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "1.1",
+	"version": "1.3",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -56,6 +56,9 @@
 		{"name": "ranr", "type": "double", "doc": "Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg]"},
 		{"name": "decnr", "type": "double", "doc": "Declination of nearest source in reference image PSF-catalog; J2000 [deg]"},
 		{"name": "sgmag", "type": ["float", "null"], "default": null, "doc": "g-band magnitude of closest source from PS1 catalog; if exists within 1 arcsec [mag]"},
+		{"name": "srmag", "type": ["float", "null"], "default": null, "doc": "r-band magnitude of closest source from PS1 catalog; if exists within 1 arcsec [mag]"},
+		{"name": "simag", "type": ["float", "null"], "default": null, "doc": "i-band magnitude of closest source from PS1 catalog; if exists within 1 arcsec [mag]"},
+		{"name": "szmag", "type": ["float", "null"], "default": null, "doc": "z-band magnitude of closest source from PS1 catalog; if exists within 1 arcsec [mag]"},
 		{"name": "sgscore", "type": ["float", "null"], "default": null, "doc": "Star/Galaxy score of closest source from PS1 catalog 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star"},
 		{"name": "ndethist", "type": "int", "doc": "Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted"},
 		{"name": "ncovhist", "type": "int", "doc": "Number of times input candidate position fell on any field and readout-channel going back to beginning of survey"},
