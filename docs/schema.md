@@ -16,7 +16,7 @@ The top-level alert contains the following fields:
 
 | Field | Type | Contents |
 |:--------|:-------|:--------|
-| `alertId` | long | unique identifier for the alert |
+| `objectId` | long | unique identifier for this object |
 | `candid` | long | unique identifier for the subtraction candidate |
 | `candidate` | `ztf.alert.candidate` | candidate record |
 | `prv_candidates` | array of `ztf.alert.prv_candidate` or null | candidate records for 30 days' past history |
@@ -79,8 +79,12 @@ The top-level alert contains the following fields:
 | `sigmagapbig` | [float, null], default: null | 1-sigma uncertainty in magapbig [mag] | 
 | `ranr` | double | Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg] | 
 | `decnr` | double | Declination of nearest source in reference image PSF-catalog; J2000 [deg] | 
-| `sgmag` | [float, null], default: null | g-band magnitude of closest source from PS1 catalog; if exists within 1 arcsec [mag] | 
+| `sgmag` | [float, null], default: null | g-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `srmag` | [float, null], default: null | r-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `simag` | [float, null], default: null | i-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `szmag` | [float, null], default: null | z-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `sgscore` | [float, null], default: null | Star/Galaxy score of closest source from PS1 catalog 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
+| `distpsnr1` | [float, null], default: null | Distance of closest source from PS1 catalog; if exists within 30 arcsec [arcsec] |
 | `ndethist` | int | Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted | 
 | `ncovhist` | int | Number of times input candidate position fell on any field and readout-channel going back to beginning of survey | 
 | `jdstarthist` | [double, null], default: null | Earliest Julian date of epoch corresponding to ndethist [days] | 
@@ -91,7 +95,9 @@ The top-level alert contains the following fields:
 
 The `prv_candidates` field contains an array of one or more previous subtraction candidates at the position of the alert.  These are obtained by a simple cone search at the position of the alert candidate on the last 30 days of history.  If there are no previous candidates or upper limits, this field is null.
 
-The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of `sgmag`, `sgscore`, `ndethist`, `ncovhist`, `jdstarthist`, and `jdendhist`.
+The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of `sgmag`, `srmag`, `simag, `szmag`, `sgscore`, `distpsnr1`, `ndethist`, `ncovhist`, `jdstarthist`, and `jdendhist`.
+
+Additionally, if the previous image has a nondetection at position of the new candidate, `candid`, `isdiffpos`, `ra`, `dec`, `magpsf`, `sigmapsf`, `ranr`, and `decr` will be null.  In this case `diffmaglim` provides an estimate of the limiting magnitude over the entire image.
 
 ## ztf.alert.cutout
 
