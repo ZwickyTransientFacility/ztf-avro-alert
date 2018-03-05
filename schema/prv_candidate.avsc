@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "prv_candidate",
 	"doc": "avro alert schema",
-	"version": "1.5",
+	"version": "1.6",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -54,6 +54,7 @@
 		{"name": "magapbig", "type": ["float", "null"], "default": null, "doc": "Aperture mag using 18 pixel diameter aperture [mag]"},
 		{"name": "sigmagapbig", "type": ["float", "null"], "default": null, "doc": "1-sigma uncertainty in magapbig [mag]"},
 		{"name": "ranr", "type": ["double", "null"], "doc": "Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg]"},
-		{"name": "decnr", "type": ["double", "null"], "doc": "Declination of nearest source in reference image PSF-catalog; J2000 [deg]"}
+		{"name": "decnr", "type": ["double", "null"], "doc": "Declination of nearest source in reference image PSF-catalog; J2000 [deg]"},
+                {"name": "scorr", "type": ["double", "null"], "default": null, "doc": "Peak-pixel signal-to-noise ratio in point source matched-filtered detection image"}
 			]
 }

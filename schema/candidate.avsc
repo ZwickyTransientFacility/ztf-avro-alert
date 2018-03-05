@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "1.5",
+	"version": "1.6",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -64,6 +64,7 @@
 		{"name": "ndethist", "type": "int", "doc": "Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted"},
 		{"name": "ncovhist", "type": "int", "doc": "Number of times input candidate position fell on any field and readout-channel going back to beginning of survey"},
 		{"name": "jdstarthist", "type": ["double", "null"], "default": null, "doc": "Earliest Julian date of epoch corresponding to ndethist [days]"},
-		{"name": "jdendhist", "type": ["double", "null"], "default": null, "doc": "Latest Julian date of epoch corresponding to ndethist [days]"}
+		{"name": "jdendhist", "type": ["double", "null"], "default": null, "doc": "Latest Julian date of epoch corresponding to ndethist [days]"},
+                {"name": "scorr", "type": ["double", "null"], "default": null, "doc": "Peak-pixel signal-to-noise ratio in point source matched-filtered detection image"}
 			]
 }
