@@ -6,6 +6,6 @@
 	"version": "1.6",
 	"fields": [
 		{"name": "fileName", "type": "string"},
-		{"name": "stampData", "type": "bytes", "doc": "jpeg"}
+		{"name": "stampData", "type": "bytes", "doc": "fits.gz"}
 			]
 }
