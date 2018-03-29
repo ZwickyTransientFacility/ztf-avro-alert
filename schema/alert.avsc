@@ -3,7 +3,7 @@
 	"type": "record",
 	"name": "alert",
 	"doc": "avro alert schema",
-	"version": "1.6",
+	"version": "1.8",
 	"fields": [
 		{"name": "objectId", "type": "string", "doc": "add descriptions like this"},
 		{"name": "candid", "type": "long"},
