@@ -15,5 +15,5 @@ Usage
 -----
 
 ```
-./bin/cat_avro_file.py data/1726958725155001.avro
+./bin/cat_avro_file.py data/396522680015040000.avro
 ```
