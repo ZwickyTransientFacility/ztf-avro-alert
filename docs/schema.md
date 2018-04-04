@@ -74,17 +74,11 @@ The top-level alert contains the following fields:
 | `ssdistnr` | [float, null], default: null | distance to nearest known solar system object [arcsec] | 
 | `ssmagnr` | [float, null], default: null | magnitude of nearest known solar system object (usually V-band from MPC archive) [mag] | 
 | `ssnamenr` | [string, null], default: null | name of nearest known solar system object (from MPC archive) | 
-| `sumrat` | [float, null], default: null | Ratio: sum(pixels) / sum(|pixels|) in a 5 x 5 pixel stamp where stamp is first median-filtered to mitigate outliers | 
+| `sumrat` | [float, null], default: null | Ratio: sum(pixels) / sum(abs(pixels)) in a 5 x 5 pixel stamp where stamp is first median-filtered to mitigate outliers | 
 | `magapbig` | [float, null], default: null | Aperture mag using 18 pixel diameter aperture [mag] | 
 | `sigmagapbig` | [float, null], default: null | 1-sigma uncertainty in magapbig [mag] | 
 | `ranr` | double | Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg] | 
 | `decnr` | double | Declination of nearest source in reference image PSF-catalog; J2000 [deg] | 
-| `sgmag1` | [float, null], default: null | g-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `srmag1` | [float, null], default: null | r-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `simag1` | [float, null], default: null | i-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `szmag1` | [float, null], default: null | z-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `sgscore1` | [float, null], default: null | Star/Galaxy score of closest source from PS1 catalog 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
-| `distpsnr1` | [float, null], default: null | Distance of closest source from PS1 catalog; if exists within 30 arcsec [arcsec] |
 | `ndethist` | int | Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted | 
 | `ncovhist` | int | Number of times input candidate position fell on any field and readout-channel going back to beginning of survey | 
 | `jdstarthist` | [double, null], default: null | Earliest Julian date of epoch corresponding to ndethist [days] | 
@@ -92,6 +86,12 @@ The top-level alert contains the following fields:
 | `scorr` |  [double, null],   default: null |  Peak-pixel signal-to-noise ratio in point source matched-filtered detection image | 
 | `tooflag` |  [int, null],  default: 0 |  1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure | 
 | `objectidps1` |  [long,  null],  default: null |  Object ID of closest source from PS1 catalog; if exists within 30 arcsec | 
+| `sgmag1` | [float, null], default: null | g-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `srmag1` | [float, null], default: null | r-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `simag1` | [float, null], default: null | i-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `szmag1` | [float, null], default: null | z-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `sgscore1` | [float, null], default: null | Star/Galaxy score of closest source from PS1 catalog 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
+| `distpsnr1` | [float, null], default: null | Distance of closest source from PS1 catalog; if exists within 30 arcsec [arcsec] |
 | `objectidps2` |  [long,  null],  default: null |  Object ID of second closest source from PS1 catalog; if exists within 30 arcsec | 
 | `sgmag2` |  [float,  null],  default: null |  g-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `srmag2` |  [float,  null],  default: null |  r-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
