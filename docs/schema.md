@@ -86,24 +86,24 @@ The top-level alert contains the following fields:
 | `scorr` |  [double, null],   default: null |  Peak-pixel signal-to-noise ratio in point source matched-filtered detection image | 
 | `tooflag` |  [int, null],  default: 0 |  1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure | 
 | `objectidps1` |  [long,  null],  default: null |  Object ID of closest source from PS1 catalog; if exists within 30 arcsec | 
-| `sgmag1` | [float, null], default: null | g-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `srmag1` | [float, null], default: null | r-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `simag1` | [float, null], default: null | i-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `szmag1` | [float, null], default: null | z-band magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `sgmag1` | [float, null], default: null | g-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `srmag1` | [float, null], default: null | r-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `simag1` | [float, null], default: null | i-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `szmag1` | [float, null], default: null | z-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `sgscore1` | [float, null], default: null | Star/Galaxy score of closest source from PS1 catalog 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
 | `distpsnr1` | [float, null], default: null | Distance of closest source from PS1 catalog; if exists within 30 arcsec [arcsec] |
 | `objectidps2` |  [long,  null],  default: null |  Object ID of second closest source from PS1 catalog; if exists within 30 arcsec | 
-| `sgmag2` |  [float,  null],  default: null |  g-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `srmag2` |  [float,  null],  default: null |  r-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `simag2` |  [float,  null],  default: null |  i-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `szmag2` |  [float,  null],  default: null |  z-band magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `sgmag2` |  [float,  null],  default: null |  g-band PSF magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `srmag2` |  [float,  null],  default: null |  r-band PSF magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `simag2` |  [float,  null],  default: null |  i-band PSF magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `szmag2` |  [float,  null],  default: null |  z-band PSF magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `sgscore2` |  [float,  null],  default: null |  Star/Galaxy score of second closest source from PS1 catalog; if exists within 30 arcsec: 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
 | `distpsnr2` |  [float,  null],  default: null |  Distance to second closest source from PS1 catalog; if exists within 30 arcsec [arcsec] | 
 | `objectidps3` |  [long, null],  default: null |  Object ID of third closest source from PS1 catalog; if exists within 30 arcsec | 
-| `sgmag3` |  [float, null],  default: null |  g-band magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `srmag3` |  [float, null],  default: null |  r-band magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `simag3` |  [float, null],  default: null |  i-band magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
-| `szmag3` |  [float, null],  default: null |  z-band magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `sgmag3` |  [float, null],  default: null |  g-band PSF magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `srmag3` |  [float, null],  default: null |  r-band PSF magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `simag3` |  [float, null],  default: null |  i-band PSF magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
+| `szmag3` |  [float, null],  default: null |  z-band PSF magnitude of third closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `sgscore3` |  [float,  null],  default: null |  Star/Galaxy score of third closest source from PS1 catalog; if exists within 30 arcsec: 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star | 
 | `distpsnr3` |  [float,  null],  default: null |  Distance to third closest source from PS1 catalog; if exists within 30 arcsec [arcsec] | 
 | `nmtchps` |  int |  Number of source matches from PS1 catalog falling within 30 arcsec | 
