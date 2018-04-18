@@ -122,7 +122,7 @@ The fields for an individual `prv_candidate` are identical to `candidate` except
 
 Additionally, if the previous image has a nondetection at position of the new candidate, `candid`, `isdiffpos`, `ra`, `dec`, `magpsf`, `sigmapsf`, `ranr`, and `decr` will be null.  In this case `diffmaglim` provides an estimate of the limiting magnitude over the entire image.
 
-## ztf.alert.cutout
+### ztf.alert.cutout
 
 Each cutout contains two fields:
 
