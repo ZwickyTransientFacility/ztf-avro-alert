@@ -51,11 +51,11 @@ The top-level alert contains the following fields:
 | `chipsf` | [float, null], default: null | Reduced chi-square for PSF-fit | 
 | `magap` | [float, null], default: null | Aperture mag using 8 pixel diameter aperture [mag] | 
 | `sigmagap` | [float, null], default: null | 1-sigma uncertainty in magap [mag] | 
-| `distnr` | [float, null], default: null | distance to nearest source in reference image PSF-catalog if within 10 arcsec [pixels] | 
-| `magnr` | [float, null], default: null | magnitude of nearest source in reference image PSF-catalog if within 10 arcsec [mag] | 
-| `sigmagnr` | [float, null], default: null | 1-sigma uncertainty in magnr if within 10 arcsec [mag] | 
-| `chinr` | [float, null], default: null | DAOPhot chi parameter of nearest source in reference image PSF-catalog if within 10 arcsec | 
-| `sharpnr` | [float, null], default: null | DAOPhot sharp parameter of nearest source in reference image PSF-catalog if within 10 arcsec | 
+| `distnr` | [float, null], default: null | distance to nearest source in reference image PSF-catalog within 30 arcsec [pixels] | 
+| `magnr` | [float, null], default: null | magnitude of nearest source in reference image PSF-catalog within 30 arcsec [mag] | 
+| `sigmagnr` | [float, null], default: null | 1-sigma uncertainty in magnr within 30 arcsec [mag] | 
+| `chinr` | [float, null], default: null | DAOPhot chi parameter of nearest source in reference image PSF-catalog within 30 arcsec | 
+| `sharpnr` | [float, null], default: null | DAOPhot sharp parameter of nearest source in reference image PSF-catalog within 30 arcsec | 
 | `sky` | [float, null], default: null | Local sky background estimate [DN] | 
 | `magdiff` | [float, null], default: null | Difference: magap - magpsf [mag] | 
 | `fwhm` | [float, null], default: null | Full Width Half Max assuming a Gaussian core, from SExtractor [pixels] | 
