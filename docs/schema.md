@@ -1,7 +1,7 @@
 ZTF Avro Schemas
 ================
 
-These documents are for schema v1.8.
+These documents are for schema v2.0.
 
 ## Schema Heirarchy
 
@@ -16,6 +16,8 @@ The top-level alert contains the following fields:
 
 | Field | Type | Contents |
 |:--------|:-------|:--------|
+| `schemavsn` | string | schema version used |
+| `publisher` | string | origin of alert packet |
 | `objectId` | long | unique identifier for this object |
 | `candid` | long | unique identifier for the subtraction candidate |
 | `candidate` | `ztf.alert.candidate` | candidate record |
@@ -71,6 +73,7 @@ The top-level alert contains the following fields:
 | `nneg` | [int, null], default: null | number of negative pixels in a 5 x 5 pixel stamp | 
 | `nbad` | [int, null], default: null | number of prior-tagged bad pixels in a 5 x 5 pixel stamp | 
 | `rb` | [float, null], default: null | RealBogus quality score; range is 0 to 1 where closer to 1 is more reliable | 
+| `rbversion` | string | version of RealBogus model/classifier used to assign rb quality score |
 | `ssdistnr` | [float, null], default: null | distance to nearest known solar system object [arcsec] | 
 | `ssmagnr` | [float, null], default: null | magnitude of nearest known solar system object (usually V-band from MPC archive) [mag] | 
 | `ssnamenr` | [string, null], default: null | name of nearest known solar system object (from MPC archive) | 
