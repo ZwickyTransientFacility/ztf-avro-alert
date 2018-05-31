@@ -11,7 +11,9 @@ Example Avro packets are saved as binary files in `data/`.  A simple script to p
 
 There is an [example notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Working_with_avro_files.ipynb) which provides a tutorial for loading the alert packet contents in python.
 
-Requires python3 and `avro.schema` for combining nested schemas, which you can get with `pip install avro-python3`. The python2 `avro` is significantly different from `avro-python3` and will not work here without addressing those changes.
+Requires python 3 and `avro.schema` for combining nested schemas, which you can get with `pip install avro-python3`. The python2 `avro` is significantly different from `avro-python3` and will not work here without addressing those changes.
+Better performance may be obtained with the `fastavro` library, available with `pip install fastavro`.
+
 
 Usage
 -----
