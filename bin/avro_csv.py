@@ -1,21 +1,24 @@
 #!/usr/bin/env python
 
 """
-Extracting candidate fields from avro packets
+Extracting ztf.alert.candidate fields from avro packets
 collected as a tar.gz file and writing them into a csv file.
 
+Please check the packet contents at:
+https://zwickytransientfacility.github.io/ztf-avro-alert/schema.html
+    
 Note:
     if remove_duplicates = True (default)
     then remove all rows with dubplicates 
     from .csv file.
 
 Command line to run the code:
-python avro_csv.py ztf_public_20180601 
+python avro_csv.py ztf_public_20180601         # "20180601" is just an example.  
 
 Output:
     ztf_public_20180601.csv
     
-    log.txt file w/ the following format:
+    log.txt file containing the following info:
     20180601,# of alerts before checking for duplicates,# of alerts after removing duplicates.
   
 """
