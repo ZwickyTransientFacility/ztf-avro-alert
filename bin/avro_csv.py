@@ -1,19 +1,23 @@
 #!/usr/bin/env python
 
 """
-Extracting the following info from avro files
-collected as a tar file and writing them into a csv file.
+Extracting candidate fields from avro packets
+collected as a tar.gz file and writing them into a csv file.
 
 Note:
     if remove_duplicates = True (default)
     then remove all rows with dubplicates 
     from .csv file.
+
+Command line to run the code:
+python avro_csv.py ztf_public_20180601 
+
+Output:
+    ztf_public_20180601.csv
     
-    
-Write number of alerts in a given topic into logMSIPSummary.txt file. 
-    format: # of alerts before checking for duplicates, # of alerts after removing duplicates,
-            min('candid'), max('candid'), min('jd'), max('jd') 
-    
+    log.txt file w/ the following format:
+    20180601,# of alerts before checking for duplicates,# of alerts after removing duplicates.
+  
 """
 
 import os
@@ -24,14 +28,11 @@ import numpy as np
 import argparse
 import tarfile
 import fastavro
-#from glob import glob
 
 remove_duplicates = True
 
-# chnage the following path to where you want to dump generated files.
-pth = '/epyc/data/ztfMSIP/'
-
-pth2 = '/epyc/data/ztfDB/'
+# set the path to directory containing "ztf_public_[date].tar.gz" file on your local machine.
+pth = '/astro/ztf_avro_alerts/'
 
 alert_fields = 'objectId,jd,fid,pid,diffmaglim,pdiffimfilename,programpi,programid,candid,isdiffpos,tblid,nid,rcid,field,xpos,ypos,\
 ra,dec,magpsf,sigmapsf,chipsf,magap,sigmagap,distnr,magnr,sigmagnr,chinr,sharpnr,sky,magdiff,\
@@ -68,7 +69,7 @@ def main():
                     pac1['objectId'] = packet['objectId']
                     pac2 = packet['candidate']
                     # remove any field from packet you're not interested using the following commented out line.
-                    #pac2.pop('pdiffimfilename',0), pac2.pop('programpi',0)
+                    #pac2.pop('pdiffimfilename',0), pac2.pop('programid',0)
                     pac = {**pac1, **pac2}
                     keys = pac.keys()
                     dict_writer = csv.DictWriter(alert_packet, keys)
@@ -83,9 +84,9 @@ def main():
             df.drop_duplicates(subset=None, inplace=True)
             df_af = len(df)
 
-            with open(pth2+'logMSIPSummary.txt','a') as lg:
-                lg.write('%s \t %i \t %i \t %i \t %i \t %.9f \t %.9f \n'%
-                         (args.topic.split('_')[2], df_bf, df_af, min(df['candid']), max(df['candid']), min(df['jd']), max(df['jd']) ))
+            with open(pth+'log.txt','a') as lg:
+                lg.write('%s,%i,%i\n'%
+                         (args.topic.split('_')[2], df_bf, df_af))
 
             df.to_csv(pth+args.topic+'.csv', sep=',', header=True, index=False)
 
@@ -94,11 +95,10 @@ def main():
 
     else:
         print('filename does not exist to read! \n')
-        with open(pth2+'logMSIPSummary.txt','a') as lg:
-            lg.write('%s \t %i \t %i \t %i \t %i \t %.9f \t %.9f \n'%(args.topic.split('_')[2], 0, 0, 0, 0, 0, 0) )
+        with open(pth+'log.txt','a') as lg:
+            lg.write('%s,%i,%i\n'%(args.topic.split('_')[2], 0, 0) )
 
 
 if __name__ == "__main__":
     main()
-
-       
+    
