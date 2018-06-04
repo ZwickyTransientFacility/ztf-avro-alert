@@ -74,9 +74,9 @@ The top-level alert contains the following fields:
 | `nbad` | [int, null], default: null | number of prior-tagged bad pixels in a 5 x 5 pixel stamp | 
 | `rb` | [float, null], default: null | RealBogus quality score; range is 0 to 1 where closer to 1 is more reliable | 
 | `rbversion` | string | version of RealBogus model/classifier used to assign rb quality score |
-| `ssdistnr` | [float, null], default: null | distance to nearest known solar system object [arcsec] | 
-| `ssmagnr` | [float, null], default: null | magnitude of nearest known solar system object (usually V-band from MPC archive) [mag] | 
-| `ssnamenr` | [string, null], default: null | name of nearest known solar system object (from MPC archive) | 
+| `ssdistnr` | [float, null], default: null | distance to nearest known solar system object; set to -999.0 if none [arcsec] | 
+| `ssmagnr` | [float, null], default: null | magnitude of nearest known solar system object (usually V-band from MPC archive); set to -999.0 if none [mag] | 
+| `ssnamenr` | [string, null], default: null | name of nearest known solar system object (from MPC archive); 'null' if none | 
 | `sumrat` | [float, null], default: null | Ratio: sum(pixels) / sum(abs(pixels)) in a 5 x 5 pixel stamp where stamp is first median-filtered to mitigate outliers | 
 | `magapbig` | [float, null], default: null | Aperture mag using 18 pixel diameter aperture [mag] | 
 | `sigmagapbig` | [float, null], default: null | 1-sigma uncertainty in magapbig [mag] | 
