@@ -5,7 +5,7 @@ Repository with the ZTF Avro schemas, example data products, and simple example 
 
 [Additional documentation](https://zwickytransientfacility.github.io/ztf-avro-alert/) is available in the `docs` directory.  Of particular interest is the [guide to the alert contents](https://zwickytransientfacility.github.io/ztf-avro-alert/schema.html).
 
-There is an [example notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Working_with_avro_files.ipynb) which provides a tutorial for loading the alert packet contents in python.
+There is an [example notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Working_with_avro_files.ipynb) which provides a tutorial for loading the alert packet contents in python.  Another notebook shows [example filters for transients](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Filtering_alerts.ipynb).
 
 Schemas are in `schema/` and are given as .avsc files.  `alert.avsc` is the top-level schema.
 

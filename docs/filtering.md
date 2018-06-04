@@ -14,3 +14,5 @@ abs(magdiff) <= 0.1
 ```
 
 More characterization will follow as the survey and analyses progress.
+
+[This notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Filtering_alerts.ipynb) provides one example of how to apply these filters.

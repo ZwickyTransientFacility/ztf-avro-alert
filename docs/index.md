@@ -10,7 +10,7 @@ The [Schema page](schema.md) provides a human-readable guide to the alert fields
 
 [Suggested filters](filtering.md) are available to increase the purity of the stream.
 
-An [example notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Working_with_avro_files.ipynb) provides a tutorial for accessing the alert packet contents from python.
+An [example notebook](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Working_with_avro_files.ipynb) provides a tutorial for accessing the alert packet contents from python.  A second notebook provides an example of [filtering for transients](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/notebooks/Filtering_alerts.ipynb).
 
 The ZTF Avro schemas may be seen [here](https://github.com/ZwickyTransientFacility/ztf-avro-alert/tree/master/schema).  
 
