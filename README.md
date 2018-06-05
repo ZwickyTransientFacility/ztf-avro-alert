@@ -1,7 +1,7 @@
 ztf-avro-alert
 =================
 
-Repository with the ZTF Avro schemas, example data products, and simple example scripts demonstrating how to work with them. 
+Repository with the ZTF Avro schemas, example data products, and simple example scripts demonstrating how to work with them.  Public access to ZTF alerts is provided by the [University of Washington](https://ztf.uw.edu/alerts/public/).
 
 [Additional documentation](https://zwickytransientfacility.github.io/ztf-avro-alert/) is available in the `docs` directory.  Of particular interest is the [guide to the alert contents](https://zwickytransientfacility.github.io/ztf-avro-alert/schema.html).
 
