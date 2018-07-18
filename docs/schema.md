@@ -1,7 +1,7 @@
 ZTF Avro Schemas
 ================
 
-These documents are for schema v2.0.
+These documents are for schema v3.0.
 
 ## Schema Heirarchy
 
@@ -114,14 +114,30 @@ The top-level alert contains the following fields:
 | `jdstartref` |  double |  Observation Julian date of earliest exposure used to generate reference image [days] | 
 | `jdendref` |  double |  Observation Julian date of latest exposure used to generate reference image [days] | 
 | `nframesref` |  int |  Number of frames (epochal images) used to generate reference image |
-
+| `dsnrms` |  [float,  null],  default: null | Ratio: D/stddev(D) on event position where D = difference image |
+| `ssnrms` |  [float,  null],  default: null | Ratio: S/stddev(S) on event position where S = image of convolution: D (x) PSF(D) |
+| `dsdiff` | [float,  null],  default: null | Difference of statistics: dsnrms - ssnrms |
+| `magzpsci` | [float,  null],  default: null | Magnitude zero point for photometry estimates [mag] | 
+| `magzpsciunc` |  [float,  null],  default: null | Magnitude zero point uncertainty (in magzpsci) [mag] |
+| `magzpscirms` |  [float,  null],  default: null | RMS (deviation from average) in all differences between instrumental photometry and matched photometric calibrators from science image processing [mag] |
+| `nmatches` |  int | Number of PS1 photometric calibrators used to calibrate science image from science image processing |
+| `clrcoeff` |  [float,  null],  default: null | Color coefficient from linear fit from photometric calibration of science image |
+| `clrcounc` |  [float,  null],  default: null | Color coefficient uncertainty from linear fit (corresponding to clrcoeff) |
+| `zpclrcov` |  [float,  null],  default: null | Covariance in magzpsci and clrcoeff from science image processing [mag^2] |
+| `zpmed` | [float,  null],  default: null | Magnitude zero point from median of all differences between instrumental photometry and matched photometric calibrators from science image processing [mag] |
+| `clrmed` |  [float,  null],  default: null | Median color of all PS1 photometric calibrators used from science image processing [mag]: for filter (fid) = 1, 2, 3, PS1 color used = g-r, g-r, r-i respectively |
+| `clrrms` |  [float,  null],  default: null | RMS color (deviation from average) of all PS1 photometric calibrators used from science image processing [mag] |
+| `neargaia` | [float,  null],  default: null | Distance to closest source from Gaia DR1 catalog irrespective of magnitude; if exists within 90 arcsec [arcsec] |
+| `neargaiabright` | [float,  null],  default: null | Distance to closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [arcsec] |
+| `maggaia` | [float,  null],  default: null | Gaia (G-band) magnitude of closest source from Gaia DR1 catalog irrespective of magnitude; if exists within 90 arcsec [mag] |
+| `maggaiabright` | [float,  null],  default: null | Gaia (G-band) magnitude of closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [mag] |
 
 
 ### ztf.alert.prv_candidate
 
 The `prv_candidates` field contains an array of one or more previous subtraction candidates at the position of the alert.  These are obtained by a simple cone search at the position of the alert candidate on the last 30 days of history.  If there are no previous candidates or upper limits, this field is null.
 
-The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of the PS1 matches (`sgmag#`, `srmag#`, `simag#`, `szmag#`, `sgscore#`, `distpsnr#`, `objectidps#`, `nmatchps`), previous detection history (`ndethist`, `ncovhist`, `jdstarthist`, `jdendhist`), `tooflag`,  and reference image information (`rfid`, `jdstartref`, `jdendref`, `nframesref`).
+The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of the PS1 and Gaia matches, previous detection history, `tooflag`,  reference image information, and zeropoint information. 
 
 Additionally, if the previous image has a nondetection at position of the new candidate, `candid`, `isdiffpos`, `ra`, `dec`, `magpsf`, `sigmapsf`, `ranr`, and `decr` will be null.  In this case `diffmaglim` provides an estimate of the limiting magnitude over the entire image.
 
