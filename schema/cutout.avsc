@@ -3,7 +3,7 @@
 	"type": "record",
 	"name": "cutout",
 	"doc": "avro alert schema",
-	"version": "2.0",
+	"version": "3.0",
 	"fields": [
 		{"name": "fileName", "type": "string"},
 		{"name": "stampData", "type": "bytes", "doc": "fits.gz"}

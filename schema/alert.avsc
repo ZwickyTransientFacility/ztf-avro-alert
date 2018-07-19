@@ -3,7 +3,7 @@
 	"type": "record",
 	"name": "alert",
 	"doc": "avro alert schema for ZTF (www.ztf.caltech.edu)",
-	"version": "2.0",
+	"version": "3.0",
 	"fields": [
                 {"name": "schemavsn", "type": "string", "doc": "schema version used"},
                 {"name": "publisher", "type": "string", "doc": "origin of alert packet"},

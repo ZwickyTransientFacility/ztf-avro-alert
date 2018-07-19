@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "prv_candidate",
 	"doc": "avro alert schema",
-	"version": "2.0",
+	"version": "3.0",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -22,7 +22,7 @@
 		{"name": "ypos", "type": ["float", "null"], "default": null, "doc": "y-image position of candidate [pixels]"},
 		{"name": "ra", "type": ["double", "null"], "doc": "Right Ascension of candidate; J2000 [deg]"},
 		{"name": "dec", "type": ["double", "null"], "doc": "Declination of candidate; J2000 [deg]"},
-		{"name": "magpsf", "type": ["float", "null"], "doc": "magnitude from PSF-curve-of-growth corrected photometry in a 7 pixel diameter aperture [mag]"},
+		{"name": "magpsf", "type": ["float", "null"], "doc": "Magnitude from PSF-fit photometry [mag]"},
 		{"name": "sigmapsf", "type": ["float", "null"], "doc": "1-sigma uncertainty in magpsf [mag]"},
 		{"name": "chipsf", "type": ["float", "null"], "default": null, "doc": "Reduced chi-square for PSF-fit"},
 		{"name": "magap", "type": ["float", "null"], "default": null, "doc": "Aperture mag using 14 pixel diameter aperture [mag]"},
