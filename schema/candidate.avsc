@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "3.0",
+	"version": "3.1",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -104,6 +104,7 @@
 		{"name": "neargaia", "type": ["float", "null"], "default": null, "doc": "Distance to closest source from Gaia DR1 catalog irrespective of magnitude; if exists within 90 arcsec [arcsec]"},
 		{"name": "neargaiabright", "type": ["float", "null"], "default": null, "doc": "Distance to closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [arcsec]"},
 		{"name": "maggaia", "type": ["float", "null"], "default": null, "doc": "Gaia (G-band) magnitude of closest source from Gaia DR1 catalog irrespective of magnitude; if exists within 90 arcsec [mag]"},
-		{"name": "maggaiabright", "type": ["float", "null"], "default": null, "doc": "Gaia (G-band) magnitude of closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [mag]"}
+		{"name": "maggaiabright", "type": ["float", "null"], "default": null, "doc": "Gaia (G-band) magnitude of closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [mag]"},
+		{"name": "exptime", "type": ["float", "null"], "default": null, "doc": "Integration time of camera exposure [sec]"}
 			]
 }
