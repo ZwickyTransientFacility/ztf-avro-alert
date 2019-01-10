@@ -1,7 +1,7 @@
 ZTF Avro Schemas
 ================
 
-These documents are for schema v3.1.
+These documents are for schema v3.2.
 
 ## Schema Heirarchy
 
@@ -138,7 +138,7 @@ The top-level alert contains the following fields:
 
 The `prv_candidates` field contains an array of one or more previous subtraction candidates at the position of the alert.  These are obtained by a simple cone search at the position of the alert candidate on the last 30 days of history.  If there are no previous candidates or upper limits, this field is null.
 
-The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of the PS1 and Gaia matches, previous detection history, `tooflag`,  reference image information, and exposure and zeropoint information. 
+The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of the PS1 and Gaia matches, previous detection history, `tooflag`,  and reference image information. 
 
 Additionally, if the previous image has a nondetection at position of the new candidate, `candid`, `isdiffpos`, `ra`, `dec`, `magpsf`, `sigmapsf`, `ranr`, and `decr` will be null.  In this case `diffmaglim` provides an estimate of the limiting magnitude over the entire image.
 
