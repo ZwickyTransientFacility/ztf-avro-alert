@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "prv_candidate",
 	"doc": "avro alert schema",
-	"version": "3.1",
+	"version": "3.2",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -55,7 +55,12 @@
 		{"name": "sigmagapbig", "type": ["float", "null"], "default": null, "doc": "1-sigma uncertainty in magapbig [mag]"},
 		{"name": "ranr", "type": ["double", "null"], "doc": "Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg]"},
 		{"name": "decnr", "type": ["double", "null"], "doc": "Declination of nearest source in reference image PSF-catalog; J2000 [deg]"},
-                {"name": "scorr", "type": ["double", "null"], "default": null, "doc": "Peak-pixel signal-to-noise ratio in point source matched-filtered detection image"},
+		{"name": "scorr", "type": ["double", "null"], "default": null, "doc": "Peak-pixel signal-to-noise ratio in point source matched-filtered detection image"},
+		{"name": "magzpsci", "type": ["float", "null"], "default": null, "doc": "Magnitude zero point for photometry estimates [mag]"},
+		{"name": "magzpsciunc", "type": ["float", "null"], "default": null, "doc": "Magnitude zero point uncertainty (in magzpsci) [mag]"},
+		{"name": "magzpscirms", "type": ["float", "null"], "default": null, "doc": "RMS (deviation from average) in all differences between instrumental photometry and matched photometric calibrators from science image processing [mag]"},
+		{"name": "clrcoeff", "type": ["float", "null"], "default": null, "doc": "Color coefficient from linear fit from photometric calibration of science image"},
+		{"name": "clrcounc", "type": ["float", "null"], "default": null, "doc": "Color coefficient uncertainty from linear fit (corresponding to clrcoeff)"},
 		{"name": "rbversion", "type": "string", "doc": "version of RealBogus model/classifier used to assign rb quality score"}
 			]
 }
