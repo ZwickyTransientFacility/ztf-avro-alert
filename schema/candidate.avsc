@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "3.2",
+	"version": "3.3",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -46,7 +46,7 @@
 		{"name": "elong", "type": ["float", "null"], "default": null, "doc": "Ratio: aimage / bimage"},
 		{"name": "nneg", "type": ["int", "null"], "default": null, "doc": "number of negative pixels in a 5 x 5 pixel stamp"},
 		{"name": "nbad", "type": ["int", "null"], "default": null, "doc": "number of prior-tagged bad pixels in a 5 x 5 pixel stamp"},
-		{"name": "rb", "type": ["float", "null"], "default": null, "doc": "RealBogus quality score; range is 0 to 1 where closer to 1 is more reliable"},
+		{"name": "rb", "type": ["float", "null"], "default": null, "doc": "RealBogus quality score from Random Forest classifier; range is 0 to 1 where closer to 1 is more reliable"},
 		{"name": "ssdistnr", "type": ["float", "null"], "default": null, "doc": "distance to nearest known solar system object if exists within 30 arcsec [arcsec]"},
 		{"name": "ssmagnr", "type": ["float", "null"], "default": null, "doc": "magnitude of nearest known solar system object if exists within 30 arcsec (usually V-band from MPC archive) [mag]"},
 		{"name": "ssnamenr", "type": ["string", "null"], "default": null, "doc": "name of nearest known solar system object if exists within 30 arcsec (from MPC archive)"},
@@ -87,7 +87,7 @@
 		{"name": "jdstartref", "type": "double", "doc": "Observation Julian date of earliest exposure used to generate reference image [days]"},
 		{"name": "jdendref", "type": "double", "doc": "Observation Julian date of latest exposure used to generate reference image [days]"},
 		{"name": "nframesref", "type": "int", "doc": "Number of frames (epochal images) used to generate reference image"},
-		{"name": "rbversion", "type": "string", "doc": "version of RealBogus model/classifier used to assign rb quality score"},
+		{"name": "rbversion", "type": "string", "doc": "version of Random Forest classifier model used to assign RealBogus (rb) quality score"},
 		{"name": "dsnrms", "type": ["float", "null"], "default": null, "doc": "Ratio: D/stddev(D) on event position where D = difference image"},
 		{"name": "ssnrms", "type": ["float", "null"], "default": null, "doc": "Ratio: S/stddev(S) on event position where S = image of convolution: D (x) PSF(D)"},
 		{"name": "dsdiff", "type": ["float", "null"], "default": null, "doc": "Difference of statistics: dsnrms - ssnrms"},
@@ -105,6 +105,8 @@
 		{"name": "neargaiabright", "type": ["float", "null"], "default": null, "doc": "Distance to closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [arcsec]"},
 		{"name": "maggaia", "type": ["float", "null"], "default": null, "doc": "Gaia (G-band) magnitude of closest source from Gaia DR1 catalog irrespective of magnitude; if exists within 90 arcsec [mag]"},
 		{"name": "maggaiabright", "type": ["float", "null"], "default": null, "doc": "Gaia (G-band) magnitude of closest source from Gaia DR1 catalog brighter than magnitude 14; if exists within 90 arcsec [mag]"},
-		{"name": "exptime", "type": ["float", "null"], "default": null, "doc": "Integration time of camera exposure [sec]"}
+		{"name": "exptime", "type": ["float", "null"], "default": null, "doc": "Integration time of camera exposure [sec]"},
+		{"name": "drb", "type": ["float", "null"], "default": null, "doc": "RealBogus quality score from Deep-Learning-based classifier; range is 0 to 1 where closer to 1 is more reliable"},
+		{"name": "drbversion", "type": "string", "doc": "version of Deep-Learning-based classifier model used to assign RealBogus (drb) quality score"}
 			]
 }
