@@ -1,7 +1,7 @@
 ZTF Avro Schemas
 ================
 
-These documents are for schema v3.2.
+These documents are for schema v3.3.
 
 ## Schema Heirarchy
 
@@ -74,6 +74,8 @@ The top-level alert contains the following fields:
 | `nbad` | [int, null], default: null | number of prior-tagged bad pixels in a 5 x 5 pixel stamp | 
 | `rb` | [float, null], default: null | RealBogus quality score; range is 0 to 1 where closer to 1 is more reliable | 
 | `rbversion` | string | version of RealBogus model/classifier used to assign rb quality score |
+| `drb` | [float, null], default: null | RealBogus quality score from [Deep-Learning-based classifier](https://ui.adsabs.harvard.edu/abs/2019arXiv190711259D/abstract); range is 0 to 1 where closer to 1 is more reliable |
+| `drbversion` | string | version of Deep-Learning-based classifier model used to assign RealBogus (drb) quality score |
 | `ssdistnr` | [float, null], default: null | distance to nearest known solar system object; set to -999.0 if none [arcsec] | 
 | `ssmagnr` | [float, null], default: null | magnitude of nearest known solar system object (usually V-band from MPC archive); set to -999.0 if none [mag] | 
 | `ssnamenr` | [string, null], default: null | name of nearest known solar system object (from MPC archive); 'null' if none | 
