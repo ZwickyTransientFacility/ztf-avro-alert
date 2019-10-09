@@ -84,7 +84,7 @@ The top-level alert contains the following fields:
 | `sigmagapbig` | [float, null], default: null | 1-sigma uncertainty in magapbig [mag] | 
 | `ranr` | double | Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg] | 
 | `decnr` | double | Declination of nearest source in reference image PSF-catalog; J2000 [deg] | 
-| `ndethist` | int | Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted | 
+| `ndethist` | int | Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted. All raw detections down to a photometric S/N of ~ 3 are included. |
 | `ncovhist` | int | Number of times input candidate position fell on any field and readout-channel going back to beginning of survey | 
 | `jdstarthist` | [double, null], default: null | Earliest Julian date of epoch corresponding to ndethist [days] | 
 | `jdendhist` | [double, null], default: null | Latest Julian date of epoch corresponding to ndethist [days] |

@@ -61,7 +61,7 @@
 		{"name": "szmag1", "type": ["float", "null"], "default": null, "doc": "z-band PSF-fit magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag]"},
 		{"name": "sgscore1", "type": ["float", "null"], "default": null, "doc": "Star/Galaxy score of closest source from PS1 catalog; if exists within 30 arcsec: 0 <= sgscore <= 1 where closer to 1 implies higher likelihood of being a star"},
 		{"name": "distpsnr1", "type": ["float", "null"], "default": null, "doc": "Distance to closest source from PS1 catalog; if exists within 30 arcsec [arcsec]"},
-		{"name": "ndethist", "type": "int", "doc": "Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted"},
+		{"name": "ndethist", "type": "int", "doc": "Number of spatially-coincident detections falling within 1.5 arcsec going back to beginning of survey; only detections that fell on the same field and readout-channel ID where the input candidate was observed are counted. All raw detections down to a photometric S/N of ~ 3 are included."},
 		{"name": "ncovhist", "type": "int", "doc": "Number of times input candidate position fell on any field and readout-channel going back to beginning of survey"},
 		{"name": "jdstarthist", "type": ["double", "null"], "default": null, "doc": "Earliest Julian date of epoch corresponding to ndethist [days]"},
 		{"name": "jdendhist", "type": ["double", "null"], "default": null, "doc": "Latest Julian date of epoch corresponding to ndethist [days]"},
