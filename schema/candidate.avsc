@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "3.4",
+	"version": "3.5",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -27,7 +27,7 @@
 		{"name": "chipsf", "type": ["float", "null"], "default": null, "doc": "Reduced chi-square for PSF-fit"},
 		{"name": "magap", "type": ["float", "null"], "default": null, "doc": "Aperture mag using 14 pixel diameter aperture [mag]"},
 		{"name": "sigmagap", "type": ["float", "null"], "default": null, "doc": "1-sigma uncertainty in magap [mag]"},
-		{"name": "distnr", "type": ["float", "null"], "default": null, "doc": "distance to nearest source in reference image PSF-catalog [pixels]"},
+		{"name": "distnr", "type": ["float", "null"], "default": null, "doc": "distance to nearest source in reference image PSF-catalog [arcsec]"},
 		{"name": "magnr", "type": ["float", "null"], "default": null, "doc": "magnitude of nearest source in reference image PSF-catalog [mag]"},
 		{"name": "sigmagnr", "type": ["float", "null"], "default": null, "doc": "1-sigma uncertainty in magnr [mag]"},
 		{"name": "chinr", "type": ["float", "null"], "default": null, "doc": "DAOPhot chi parameter of nearest source in reference image PSF-catalog"},
