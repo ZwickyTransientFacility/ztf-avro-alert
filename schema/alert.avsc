@@ -10,11 +10,11 @@
 		{"name": "objectId", "type": "string", "doc": "object identifier or name"},
 		{"name": "candid", "type": "long"},
 		{"name": "candidate", "type": "ztf.alert.candidate"},
-		{"name": "prv_candidates", "type": [{
+		{"name": "prv_candidates", "type": ["null", {
 				"type": "array",
-				"items": "ztf.alert.prv_candidate"}, "null" ], "default": null},
-		{"name": "cutoutScience", "type": ["ztf.alert.cutout", "null"], "default": null},
-		{"name": "cutoutTemplate", "type": ["ztf.alert.cutout", "null"], "default": null},
-		{"name": "cutoutDifference", "type": ["ztf.alert.cutout", "null"], "default": null}
+				"items": "ztf.alert.prv_candidate"}], "default": null},
+		{"name": "cutoutScience", "type": ["null", "ztf.alert.cutout"], "default": null},
+		{"name": "cutoutTemplate", "type": ["null", "ztf.alert.cutout"], "default": null},
+		{"name": "cutoutDifference", "type": ["null", "ztf.alert.cutout"], "default": null}
 			]
 }
