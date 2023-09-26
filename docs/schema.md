@@ -1,13 +1,13 @@
 ZTF Avro Schemas
 ================
 
-These documents are for schema v3.3.
+These documents are for schema v4.01.
 
 ## Schema Heirarchy
 
 ZTF uses nested schemas to organize the data in the alert packet.
 
-`ztf.alert` (defined in [`alert.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/alert.avsc)) is the top-level namespace.  `ztf.alert` in turn relies on [`candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/candidate.avsc), [`prv_candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/prv_candidate.avsc), and [`cutout.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/cutout.avsc).
+`ztf.alert` (defined in [`alert.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/alert.avsc)) is the top-level namespace.  `ztf.alert` in turn relies on [`candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/candidate.avsc), [`prv_candidate.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/prv_candidate.avsc), [`fp_hist.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/fp_hist.avsc) and [`cutout.avsc`](https://github.com/ZwickyTransientFacility/ztf-avro-alert/blob/master/schema/cutout.avsc).
 
 
 ### ztf.alert
@@ -22,6 +22,7 @@ The top-level alert contains the following fields:
 | `candid` | long | unique identifier for the subtraction candidate |
 | `candidate` | `ztf.alert.candidate` | candidate record |
 | `prv_candidates` | array of `ztf.alert.prv_candidate` or null | candidate records for 30 days' past history |
+| `fp_hists` | array of `ztf.alert.fp_hist` or null | forced photometry measurements at the candidate position on past difference images |
 | `cutoutScience` | `ztf.alert.cutout` or null  | cutout of the science image |
 | `cutoutTemplate` | `ztf.alert.cutout` or null  | cutout of the coadded reference image |
 | `cutoutDifference` | `ztf.alert.cutout` or null  | cutout of the resulting difference image |
@@ -143,6 +144,42 @@ The `prv_candidates` field contains an array of one or more previous subtraction
 The fields for an individual `prv_candidate` are identical to `candidate` except for the omission of the PS1 and Gaia matches, previous detection history, `tooflag`,  and reference image information. 
 
 Additionally, if the previous image has a nondetection at position of the new candidate, `candid`, `isdiffpos`, `ra`, `dec`, `magpsf`, `sigmapsf`, `ranr`, and `decr` will be null.  In this case `diffmaglim` provides an estimate of the limiting magnitude over the entire image.
+
+### ztf.alert.fp_hist
+
+Introduced in the v4 schemas in 2023, these records provide forced photometry measurements at the candidate position on earlier differnece images.
+
+| Field | Type | Contents |
+|:--------|:-------|:--------|
+| `field` | [null, int], default: null | ZTF field ID |
+| `rcid` | [null, int], default: null | Readout channel ID [00 .. 63] |
+| `fid` | int | Filter ID (1=g; 2=R; 3=i) |
+| `pid` | long | Processing ID for image |
+| `rfid` | long | Processing ID for reference image to facilitate archive retrieval |
+| `sciinpseeing` | [null, float], default: null | Effective FWHM of sci image [pixels] |
+| `scibckgnd` | [null, float], default: null | Background level in sci image [DN] |
+| `scisigpix` | [null, float], default: null | Robust sigma per pixel in sci image [DN] |
+| `magzpsci` | [null, float], default: null | Magnitude zero point for photometry estimates [mag] |
+| `magzpsciunc` | [null, float], default: null | Magnitude zero point uncertainty (in magzpsci) [mag] |
+| `magzpscirms` | [null, float], default: null | RMS (deviation from average) in all differences between instrumental photometry and matched photometric calibrators from science image processing [mag] |
+| `clrcoeff` | [null, float], default: null | Color coefficient from linear fit from photometric calibration of science image |
+| `clrcounc` | [null, float], default: null | Color coefficient uncertainty from linear fit (corresponding to clrcoeff) |
+| `exptime` | [null, float], default: null | Integration time of camera exposure [sec] |
+| `adpctdif1` | [null, float], default: null | Full sci image astrometric RMS along R.A. with respect to Gaia1 [arcsec] |
+| `adpctdif2` | [null, float], default: null | Full sci image astrometric RMS along Dec. with respect to Gaia1 [arcsec] |
+| `diffmaglim` | [null, float], default: null | Expected 5-sigma mag limit in difference image based on global noise estimate [mag] |
+| `programid` | int | Program ID: encodes either public, collab, or caltech mode |
+| `jd` | double | Observation Julian date at start of exposure [days] |
+| `forcediffimflux` | [null, float], default: null | Forced difference image PSF-fit flux [DN] |
+| `forcediffimfluxunc` | [null, float], default: null | 1-sigma uncertainty in forcediffimflux [DN] |
+| `procstatus` | [null, string], default: null | Forced photometry processing status codes (0 => no warnings); see documentation |
+| `distnr` | [null, float], default: null | distance to nearest source in reference image PSF-catalog [arcsec] |
+| `ranr` | double | Right Ascension of nearest source in reference image PSF-catalog; J2000 [deg] |
+| `decnr` | double | Declination of nearest source in reference image PSF-catalog; J2000 [deg] |
+| `magnr` | [null, float], default: null | magnitude of nearest source in reference image PSF-catalog [mag] |
+| `sigmagnr` | [null, float], default: null | 1-sigma uncertainty in magnr [mag] |
+| `chinr` | [null, float], default: null | DAOPhot chi parameter of nearest source in reference image PSF-catalog |
+| `sharpnr` | [null, float], default: null | DAOPhot sharp parameter of nearest source in reference image PSF-catalog |
 
 ### ztf.alert.cutout
 
