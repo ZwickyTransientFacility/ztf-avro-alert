@@ -3,18 +3,21 @@
 	"type": "record",
 	"name": "alert",
 	"doc": "avro alert schema for ZTF (www.ztf.caltech.edu)",
-	"version": "3.3",
+	"version": "4.01",
 	"fields": [
                 {"name": "schemavsn", "type": "string", "doc": "schema version used"},
                 {"name": "publisher", "type": "string", "doc": "origin of alert packet"},
 		{"name": "objectId", "type": "string", "doc": "object identifier or name"},
 		{"name": "candid", "type": "long"},
 		{"name": "candidate", "type": "ztf.alert.candidate"},
-		{"name": "prv_candidates", "type": [{
+		{"name": "prv_candidates", "type": ["null", {
 				"type": "array",
-				"items": "ztf.alert.prv_candidate"}, "null" ], "default": null},
-		{"name": "cutoutScience", "type": ["ztf.alert.cutout", "null"], "default": null},
-		{"name": "cutoutTemplate", "type": ["ztf.alert.cutout", "null"], "default": null},
-		{"name": "cutoutDifference", "type": ["ztf.alert.cutout", "null"], "default": null}
+				"items": "ztf.alert.prv_candidate"}], "default": null},
+                {"name": "fp_hists", "type": ["null", {
+                                "type": "array",
+                                "items": "ztf.alert.fp_hist"}], "default": null},
+		{"name": "cutoutScience", "type": ["null", "ztf.alert.cutout"], "default": null},
+		{"name": "cutoutTemplate", "type": ["null", "ztf.alert.cutout"], "default": null},
+		{"name": "cutoutDifference", "type": ["null", "ztf.alert.cutout"], "default": null}
 			]
 }
