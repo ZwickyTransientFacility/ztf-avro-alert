@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "fp_hist",
 	"doc": "avro alert schema",
-	"version": "4.01",
+	"version": "4.02",
 	"type": "record",
 	"fields": [
                 {"name": "field", "type": ["null", "int"], "default": null, "doc": "ZTF field ID"},
