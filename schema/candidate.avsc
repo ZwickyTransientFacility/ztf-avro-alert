@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "candidate",
 	"doc": "avro alert schema",
-	"version": "4.01",
+	"version": "4.02",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
@@ -66,7 +66,7 @@
 		{"name": "jdstarthist", "type": ["null", "double"], "default": null, "doc": "Earliest Julian date of epoch corresponding to ndethist [days]"},
 		{"name": "jdendhist", "type": ["null", "double"], "default": null, "doc": "Latest Julian date of epoch corresponding to ndethist [days]"},
 		{"name": "scorr", "type": ["null", "double"], "default": null, "doc": "Peak-pixel signal-to-noise ratio in point source matched-filtered detection image"},
-		{"name": "tooflag", "type": ["null", "int"], "default": 0, "doc": "1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure"},
+		{"name": "tooflag", "type": ["null", "int"], "default": null, "doc": "1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure"},
 		{"name": "objectidps1", "type": ["null", "long"], "default": null, "doc": "Object ID of closest source from PS1 catalog; if exists within 30 arcsec"},
 		{"name": "objectidps2", "type": ["null", "long"], "default": null, "doc": "Object ID of second closest source from PS1 catalog; if exists within 30 arcsec"},
 		{"name": "sgmag2", "type": ["null", "float"], "default": null, "doc": "g-band PSF-fit magnitude of second closest source from PS1 catalog; if exists within 30 arcsec [mag]"},

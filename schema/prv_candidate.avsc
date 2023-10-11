@@ -2,7 +2,7 @@
 	"namespace": "ztf.alert",
 	"name": "prv_candidate",
 	"doc": "avro alert schema",
-	"version": "4.01",
+	"version": "4.02",
 	"type": "record",
 	"fields": [
 		{"name": "jd", "type": "double", "doc": "Observation Julian date at start of exposure [days]"},
