@@ -90,7 +90,7 @@ The top-level alert contains the following fields:
 | `jdstarthist` | [double, null], default: null | Earliest Julian date of epoch corresponding to ndethist [days] | 
 | `jdendhist` | [double, null], default: null | Latest Julian date of epoch corresponding to ndethist [days] |
 | `scorr` |  [double, null],   default: null |  Peak-pixel signal-to-noise ratio in point source matched-filtered detection image | 
-| `tooflag` |  [int, null],  default: 0 |  1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure | 
+| `tooflag` |  [int, null],  default: null |  1 => candidate is from a Target-of-Opportunity (ToO) exposure; 0 => candidate is from a non-ToO exposure | 
 | `objectidps1` |  [long,  null],  default: null |  Object ID of closest source from PS1 catalog; if exists within 30 arcsec | 
 | `sgmag1` | [float, null], default: null | g-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
 | `srmag1` | [float, null], default: null | r-band PSF magnitude of closest source from PS1 catalog; if exists within 30 arcsec [mag] | 
